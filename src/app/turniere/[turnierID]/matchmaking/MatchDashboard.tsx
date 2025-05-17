@@ -10,7 +10,7 @@ import GameForm from './GameInput'
 
 function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, playedGames: gameType[] }) {
 
-  let matches = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC)
+  let matches = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC, turnier.expand.groupD, turnier.expand.groupE)
 
   const [games, setGames] = useState(playedGames)
   const [filteredMatches, setFilteredMatches] = useState<gameType[]>([])

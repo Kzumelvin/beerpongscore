@@ -118,7 +118,7 @@ function GroupDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turn
               Finals
             </Button>
           </Link>
-          <Link href={`/turnierleitung/tournaments/${turnier.id}/matches`} >
+          <Link href={`/turniere/${turnier.id}/matchmaking`} >
             <Button className="" variant={"outline"}>
               Spiele
             </Button>
