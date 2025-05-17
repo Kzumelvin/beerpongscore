@@ -313,8 +313,8 @@ export function matchmakingGroup(tournamentID: string, groupA: teamType[], group
   return allMatches
 }
 
-export function matchmakingKO(scoreBoard: scoreBoard) {
+export function matchmakingKO(scoreBoard: scoreBoard, gespielteSpiele: gameType) {
 
-
+  //Analysiere Scoreboard für Relegation
 
 }
