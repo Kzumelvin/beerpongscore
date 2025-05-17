@@ -2,11 +2,13 @@
 
 import React, { useEffect, useState } from 'react'
 import { teamType, gameType, turnierType } from '@/lib/pocketbase'
-import { getScoreBoard, matchmakingGroup, matchmakingKO } from '@/lib/beerpong'
+import { finaleScoreBoard, getScoreBoard, matchmakingGroup, matchmakingKO } from '@/lib/beerpong'
 import { pb } from '@/lib/pocketbase'
 import { toast } from 'sonner'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import GameForm from './GameInput'
+import CompleteTable from '../CompleteTable'
+import CompleteFinalTable from '../CompleteFinalTable'
 
 function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, playedGames: gameType[] }) {
 
@@ -15,6 +17,7 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
   const [games, setGames] = useState(playedGames)
   const [openMatches, setOpenMatches] = useState<gameType[]>([])
   const [koMatches, setKOMatches] = useState<gameType[]>([])
+  const [finalsScore, setFinalsScore] = useState<finaleScoreBoard>([])
 
   let alleTeams: teamType[] = []
   turnier.expand.groupA && turnier.expand.groupA.forEach((t: teamType) => alleTeams.push(t))
@@ -23,10 +26,11 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
   turnier.expand.groupD && turnier.expand.groupD.forEach((t: teamType) => alleTeams.push(t))
   turnier.expand.groupE && turnier.expand.groupE.forEach((t: teamType) => alleTeams.push(t))
 
+  const groupScoreBoard = getScoreBoard(games.filter(f => f.game_type === "Gruppenphase"), alleTeams)
+
   useEffect(() => {
     try {
       pb.collection("games").subscribe("*", (e) => {
-        console.log(e.record)
         const game: gameType = {
           home_team: e.record.home_team,
           away_team: e.record.away_team,
@@ -69,11 +73,10 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
     //KO-Phase
     if (!openMatches.some(f => f.game_type == "Gruppenphase")) {
 
-      console.log("Alle Teams", alleTeams)
-
-      const { allMatches, finalScoreBoard } = matchmakingKO(turnier.id!, getScoreBoard(games, alleTeams), games)
+      const { allMatches, finalScoreBoard } = matchmakingKO(turnier.id!, groupScoreBoard, games)
 
       setKOMatches(allMatches)
+      setFinalsScore(finalScoreBoard)
 
 
     }
@@ -89,6 +92,8 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
         <CardContent>
           {openMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
           {koMatches.map(kg => <GameForm key={kg.game_number} leftGames={kg} />)}
+          <CompleteTable score={groupScoreBoard} />
+          <CompleteFinalTable score={finalsScore} />
         </CardContent>
       </CardHeader>
     </Card>

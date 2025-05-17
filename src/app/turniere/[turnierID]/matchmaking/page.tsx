@@ -17,7 +17,6 @@ async function page({ params }: { params: Promise<{ turnierID: string }> }) {
 
   })
 
-  console.log(spiele)
 
   return (
     <div className='p-4'>

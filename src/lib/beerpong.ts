@@ -317,48 +317,50 @@ export function matchmakingGroup(tournamentID: string, groupA: teamType[], group
   return allMatches
 }
 
-export function matchmakingKO(tournamentID: string, scoreBoard: scoreBoard, gespielteSpiele: gameType[]) {
+export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard, gespielteSpiele: gameType[]) {
 
   let allMatches: gameType[] = []
   let finalScoreBoard: finaleScoreBoard = []
   let gamesCount: number = gespielteSpiele.filter(f => f.tournament == tournamentID && f.game_type == "Gruppenphase").length + 1
   let koSpiele: gameType[] = gespielteSpiele.filter(f => f.game_type != "Gruppenphase")
+  let scoreBoard: scoreBoard = []
+
+  groupScoreBoard.forEach(t => scoreBoard.push(t))
 
   console.log("Anzahl gespielter Spiele:", gamesCount)
-  console.log(koSpiele)
+  console.log("Bisher gespielte KO-Spiele:", koSpiele.length)
 
   //Analysiere Scoreboard für Relegation
   if (scoreBoard.length == 6 || 7 || 9 || 10 || 11 || 12) {
 
     let relGames: gameType[] = []
 
-    let games: gameType[] = []
+      let games: gameType[] = []
       let gamesNumber = 0
-      switch(scoreBoard.length){
-        case 6:
-          gamesNumber = 2
-        case 7:
-          gamesNumber = 3
-        case 9:
-          gamesNumber = 1
-        case 10: 
-          gamesNumber = 2
-        case 11:
-          gamesNumber = 3
-        case 12:
-          gamesNumber = 4
+      if(scoreBoard.length == 9){
+        gamesNumber = 1
+      } else if (scoreBoard.length == 6 || scoreBoard.length == 10){
+        gamesNumber = 2
+      } else if (scoreBoard.length == 7 || scoreBoard.length == 11){
+        gamesNumber = 3
+      } else if (scoreBoard.length == 12) {
+        gamesNumber = 4
       }
+
+      console.log("Anzahl Spiele:", gamesNumber, "Größe Gesamttabelle", scoreBoard.length)
+
       for(let i = 0; i < gamesNumber; i++){
+        let c = i + 1
         games.push({
-          home_team: scoreBoard.at(0 - (gamesNumber*2 - i))?.team.id! || "not found",
-          away_team: scoreBoard.at(0 - (i+1))?.team.id! || "not found",
+          home_team: scoreBoard.at(-gamesNumber*2 + i)?.team.id! || "not found",
+          away_team: scoreBoard.at(-c)?.team.id! || "not found",
           game_type: "Relegation",
           groupStage: "KO",
           game_number: gamesCount,
           tournament: tournamentID,
           expand: {
-            home_team: scoreBoard.at(0 - (gamesNumber*2 - i))?.team || "not found",
-            away_team: scoreBoard.at(0 - (i+1))?.team || "not found"
+            home_team: scoreBoard.at(-gamesNumber*2 + i)?.team || "not found",
+            away_team: scoreBoard.at(-c)?.team || "not found"
 
           }
         })
@@ -372,15 +374,17 @@ export function matchmakingKO(tournamentID: string, scoreBoard: scoreBoard, gesp
     //
     koSpiele.filter(f => f.game_type == "Relegation").forEach(kg => {
 
-      console.log("KO:", kg)
+      console.log("Begegnung Relegation")
+      console.log(kg.expand.home_team.team_name, " vs. ", kg.expand.away_team.team_name)
 
       const index = relGames.findIndex(f => f.home_team == kg.home_team && f.away_team == kg.away_team)
       console.log("Index", index)
-      const ausscheidung = relGames.splice(index, 1)
+      relGames.splice(index, 1)
 
-      ausscheidung.forEach(a => {
-        if (a.home_cups! > a.away_cups!) {
-          let scoreIndex = scoreBoard.findIndex(f => f.team.id == a.away_team)
+        // Übertrag von GruppenTabelel in Endtabelle
+        if (kg.home_cups! > kg.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == kg.away_team)
+          
           finalScoreBoard.push({
             team: scoreBoard[scoreIndex].team,
             games: scoreBoard[scoreIndex].games,
@@ -389,13 +393,13 @@ export function matchmakingKO(tournamentID: string, scoreBoard: scoreBoard, gesp
             posCups: scoreBoard[scoreIndex].posCups,
             negCups: scoreBoard[scoreIndex].negCups,
             diffCups: scoreBoard[scoreIndex].diffCups,
-            groupIndex: index + 1,
+            groupIndex: groupScoreBoard.findIndex(f => f.team.id == kg.away_team),
             finalIndex: 0
           })
           scoreBoard.splice(scoreIndex, 1)
         }
-        if (a.home_cups! < a.away_cups!) {
-          let scoreIndex = scoreBoard.findIndex(f => f.team.id == a.home_team)
+        if (kg.home_cups! < kg.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == kg.home_team)
           finalScoreBoard.push({
             team: scoreBoard[scoreIndex].team,
             games: scoreBoard[scoreIndex].games,
@@ -404,13 +408,16 @@ export function matchmakingKO(tournamentID: string, scoreBoard: scoreBoard, gesp
             posCups: scoreBoard[scoreIndex].posCups,
             negCups: scoreBoard[scoreIndex].negCups,
             diffCups: scoreBoard[scoreIndex].diffCups,
-            groupIndex: index + 1,
+            groupIndex: groupScoreBoard.findIndex(f => f.team.id == kg.home_team),
             finalIndex: 0
           })
+
+          console.log("Ausscheidungsindex Relegation", scoreIndex)
           scoreBoard.splice(scoreIndex, 1)
         }
       })
-    })
+
+      finalScoreBoard.sort((a, b) => b.finalIndex - a.finalIndex || a.groupIndex - b.groupIndex)
 
 
     //Hinzufügen zu allen Spielen
@@ -419,10 +426,191 @@ export function matchmakingKO(tournamentID: string, scoreBoard: scoreBoard, gesp
       relGames.forEach(rl => allMatches.push(rl))
     }
 
-    console.log("relGames:", relGames)
+    console.log("Verbleibende Relegationsspiele: ", relGames.length)
   }
 
-  console.log("allMatches:", allMatches)
+  //Analysiere Viertelfinale
+
+  if (scoreBoard.length == 8) {
+
+    let viertelGames: gameType[] = []
+
+      let gamesNumber = 4
+
+      console.log("Anzahl Spiele:", gamesNumber, "Größe Gesamttabelle", scoreBoard.length)
+
+      for(let i = 0; i < gamesNumber; i++){
+        let c = i + 1
+        viertelGames.push({
+          home_team: scoreBoard.at(-gamesNumber*2 + i)?.team.id! || "not found",
+          away_team: scoreBoard.at(-c)?.team.id! || "not found",
+          game_type: "Viertelfinale",
+          groupStage: "KO",
+          game_number: gamesCount,
+          tournament: tournamentID,
+          expand: {
+            home_team: scoreBoard.at(-gamesNumber*2 + i)?.team || "not found",
+            away_team: scoreBoard.at(-c)?.team || "not found"
+
+          }
+        })
+        console.log()
+        gamesCount += 1
+      }
+  
+
+
+
+    //Abklärung ob Spiel gespielt und Update finalScoreBoard
+    //
+    koSpiele.filter(f => f.game_type == "Viertelfinale").forEach(kg => {
+
+      console.log("KO:", kg)
+
+      const index = viertelGames.findIndex(f => f.home_team == kg.home_team && f.away_team == kg.away_team)
+      console.log("Index", index)
+      viertelGames.splice(index, 1)
+
+  
+        console.log("Gruppenphase", groupScoreBoard)
+
+        // Übertrag von GruppenTabelel in Endtabelle
+        if (kg.home_cups! > kg.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == kg.away_team)
+          
+          finalScoreBoard.push({
+            team: scoreBoard[scoreIndex].team,
+            games: scoreBoard[scoreIndex].games,
+            points: scoreBoard[scoreIndex].posCups,
+            avePoints: scoreBoard[scoreIndex].avePoints,
+            posCups: scoreBoard[scoreIndex].posCups,
+            negCups: scoreBoard[scoreIndex].negCups,
+            diffCups: scoreBoard[scoreIndex].diffCups,
+            groupIndex: groupScoreBoard.findIndex(f => f.team.id == kg.away_team),
+            finalIndex: 1
+          })
+          scoreBoard.splice(scoreIndex, 1)
+        }
+        if (kg.home_cups! < kg.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == kg.home_team)
+          finalScoreBoard.push({
+            team: scoreBoard[scoreIndex].team,
+            games: scoreBoard[scoreIndex].games,
+            points: scoreBoard[scoreIndex].posCups,
+            avePoints: scoreBoard[scoreIndex].avePoints,
+            posCups: scoreBoard[scoreIndex].posCups,
+            negCups: scoreBoard[scoreIndex].negCups,
+            diffCups: scoreBoard[scoreIndex].diffCups,
+            groupIndex: groupScoreBoard.findIndex(f => f.team.id == kg.home_team),
+            finalIndex: 1
+          })
+
+          console.log("Ausscheidungsindex Viertelfinale", scoreIndex)
+          scoreBoard.splice(scoreIndex, 1)
+        }
+      })
+
+      finalScoreBoard.sort((a, b) => b.finalIndex - a.finalIndex || a.groupIndex - b.groupIndex)
+
+
+    //Hinzufügen zu allen Spielen
+    //
+    if (viertelGames.length > 0) {
+      viertelGames.forEach(rl => allMatches.push(rl))
+    }
+
+    console.log("Viertelfinale Spiele:", viertelGames)
+
+  }
+
+  //Analyse Halbfinale
+  if (scoreBoard.length == 4) {
+    let halbGames: gameType[] = []
+
+      let gamesNumber = 2
+
+      console.log("Anzahl Spiele:", gamesNumber, "Größe Gesamttabelle", scoreBoard.length)
+
+      for(let i = 0; i < gamesNumber; i++){
+        let c = i + 1
+        halbGames.push({
+          home_team: scoreBoard.at(-gamesNumber*2 + i)?.team.id! || "not found",
+          away_team: scoreBoard.at(-c)?.team.id! || "not found",
+          game_type: "Halbfinale",
+          groupStage: "KO",
+          game_number: gamesCount,
+          tournament: tournamentID,
+          expand: {
+            home_team: scoreBoard.at(-gamesNumber*2 + i)?.team || "not found",
+            away_team: scoreBoard.at(-c)?.team || "not found"
+
+          }
+        })
+        gamesCount += 1
+      }
+  
+
+
+
+    //Abklärung ob Spiel gespielt und Update finalScoreBoard
+    //
+    koSpiele.filter(f => f.game_type == "Halbfinale").forEach(kg => {
+
+      console.log("Begegnung Relegation")
+      console.log(kg.expand.home_team.team_name, " vs. ", kg.expand.away_team.team_name)
+
+      const index = halbGames.findIndex(f => f.home_team == kg.home_team && f.away_team == kg.away_team)
+      halbGames.splice(index, 1)
+
+        // Übertrag von GruppenTabelel in Endtabelle
+        if (kg.home_cups! > kg.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == kg.away_team)
+          
+          finalScoreBoard.push({
+            team: scoreBoard[scoreIndex].team,
+            games: scoreBoard[scoreIndex].games,
+            points: scoreBoard[scoreIndex].posCups,
+            avePoints: scoreBoard[scoreIndex].avePoints,
+            posCups: scoreBoard[scoreIndex].posCups,
+            negCups: scoreBoard[scoreIndex].negCups,
+            diffCups: scoreBoard[scoreIndex].diffCups,
+            groupIndex: groupScoreBoard.findIndex(f => f.team.id == kg.away_team),
+            finalIndex: 2
+          })
+          scoreBoard.splice(scoreIndex, 1)
+        }
+        if (kg.home_cups! < kg.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == kg.home_team)
+          finalScoreBoard.push({
+            team: scoreBoard[scoreIndex].team,
+            games: scoreBoard[scoreIndex].games,
+            points: scoreBoard[scoreIndex].posCups,
+            avePoints: scoreBoard[scoreIndex].avePoints,
+            posCups: scoreBoard[scoreIndex].posCups,
+            negCups: scoreBoard[scoreIndex].negCups,
+            diffCups: scoreBoard[scoreIndex].diffCups,
+            groupIndex: groupScoreBoard.findIndex(f => f.team.id == kg.home_team),
+            finalIndex: 2
+          })
+
+          console.log("Ausscheidungsindex Halbfinale", scoreIndex)
+          scoreBoard.splice(scoreIndex, 1)
+        }
+      })
+
+      finalScoreBoard.sort((a, b) => b.finalIndex - a.finalIndex || a.groupIndex - b.groupIndex)
+
+
+    //Hinzufügen zu allen Spielen
+    //
+    if (halbGames.length > 0) {
+      halbGames.forEach(rl => allMatches.push(rl))
+    }
+
+    console.log("Halbfinale Spiele:", halbGames.length)
+  }
+
+  console.log("Ausgabe:", allMatches)
 
   return { allMatches, finalScoreBoard }
 
