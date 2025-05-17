@@ -12,6 +12,10 @@ export type score = {
 
 export type scoreBoard = score[]
 
+export type finalsScore = score & { groupIndex: number, finalIndex: number }
+
+export type finaleScoreBoard = finalsScore[]
+
 export function getScoreBoard(spiele: gameType[], teams: teamType[]): scoreBoard {
   let st: scoreBoard = []
 
@@ -313,8 +317,113 @@ export function matchmakingGroup(tournamentID: string, groupA: teamType[], group
   return allMatches
 }
 
-export function matchmakingKO(scoreBoard: scoreBoard, gespielteSpiele: gameType) {
+export function matchmakingKO(tournamentID: string, scoreBoard: scoreBoard, gespielteSpiele: gameType[]) {
+
+  let allMatches: gameType[] = []
+  let finalScoreBoard: finaleScoreBoard = []
+  let gamesCount: number = gespielteSpiele.filter(f => f.tournament == tournamentID && f.game_type == "Gruppenphase").length + 1
+  let koSpiele: gameType[] = gespielteSpiele.filter(f => f.game_type != "Gruppenphase")
+
+  console.log("Anzahl gespielter Spiele:", gamesCount)
+  console.log(koSpiele)
 
   //Analysiere Scoreboard für Relegation
+  if (scoreBoard.length == 6 || 7 || 9 || 10 || 11 || 12) {
+
+    let relGames: gameType[] = []
+
+    let games: gameType[] = []
+      let gamesNumber = 0
+      switch(scoreBoard.length){
+        case 6:
+          gamesNumber = 2
+        case 7:
+          gamesNumber = 3
+        case 9:
+          gamesNumber = 1
+        case 10: 
+          gamesNumber = 2
+        case 11:
+          gamesNumber = 3
+        case 12:
+          gamesNumber = 4
+      }
+      for(let i = 0; i < gamesNumber; i++){
+        games.push({
+          home_team: scoreBoard.at(0 - (gamesNumber*2 - i))?.team.id! || "not found",
+          away_team: scoreBoard.at(0 - (i+1))?.team.id! || "not found",
+          game_type: "Relegation",
+          groupStage: "KO",
+          game_number: gamesCount,
+          tournament: tournamentID,
+          expand: {
+            home_team: scoreBoard.at(0 - (gamesNumber*2 - i))?.team || "not found",
+            away_team: scoreBoard.at(0 - (i+1))?.team || "not found"
+
+          }
+        })
+        gamesCount += 1
+      }
+      games.forEach(g => relGames.push(g))
+
+
+
+    //Abklärung ob Spiel gespielt und Update finalScoreBoard
+    //
+    koSpiele.filter(f => f.game_type == "Relegation").forEach(kg => {
+
+      console.log("KO:", kg)
+
+      const index = relGames.findIndex(f => f.home_team == kg.home_team && f.away_team == kg.away_team)
+      console.log("Index", index)
+      const ausscheidung = relGames.splice(index, 1)
+
+      ausscheidung.forEach(a => {
+        if (a.home_cups! > a.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == a.away_team)
+          finalScoreBoard.push({
+            team: scoreBoard[scoreIndex].team,
+            games: scoreBoard[scoreIndex].games,
+            points: scoreBoard[scoreIndex].posCups,
+            avePoints: scoreBoard[scoreIndex].avePoints,
+            posCups: scoreBoard[scoreIndex].posCups,
+            negCups: scoreBoard[scoreIndex].negCups,
+            diffCups: scoreBoard[scoreIndex].diffCups,
+            groupIndex: index + 1,
+            finalIndex: 0
+          })
+          scoreBoard.splice(scoreIndex, 1)
+        }
+        if (a.home_cups! < a.away_cups!) {
+          let scoreIndex = scoreBoard.findIndex(f => f.team.id == a.home_team)
+          finalScoreBoard.push({
+            team: scoreBoard[scoreIndex].team,
+            games: scoreBoard[scoreIndex].games,
+            points: scoreBoard[scoreIndex].posCups,
+            avePoints: scoreBoard[scoreIndex].avePoints,
+            posCups: scoreBoard[scoreIndex].posCups,
+            negCups: scoreBoard[scoreIndex].negCups,
+            diffCups: scoreBoard[scoreIndex].diffCups,
+            groupIndex: index + 1,
+            finalIndex: 0
+          })
+          scoreBoard.splice(scoreIndex, 1)
+        }
+      })
+    })
+
+
+    //Hinzufügen zu allen Spielen
+    //
+    if (relGames.length > 0) {
+      relGames.forEach(rl => allMatches.push(rl))
+    }
+
+    console.log("relGames:", relGames)
+  }
+
+  console.log("allMatches:", allMatches)
+
+  return { allMatches, finalScoreBoard }
 
 }

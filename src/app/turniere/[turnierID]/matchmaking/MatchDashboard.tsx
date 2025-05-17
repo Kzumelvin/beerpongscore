@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { gameType, turnierType } from '@/lib/pocketbase'
-import { matchmakingGroup } from '@/lib/beerpong'
+import { teamType, gameType, turnierType } from '@/lib/pocketbase'
+import { getScoreBoard, matchmakingGroup, matchmakingKO } from '@/lib/beerpong'
 import { pb } from '@/lib/pocketbase'
 import { toast } from 'sonner'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -13,7 +13,15 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
   let matches = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC, turnier.expand.groupD, turnier.expand.groupE)
 
   const [games, setGames] = useState(playedGames)
-  const [filteredMatches, setFilteredMatches] = useState<gameType[]>([])
+  const [openMatches, setOpenMatches] = useState<gameType[]>([])
+  const [koMatches, setKOMatches] = useState<gameType[]>([])
+
+  let alleTeams: teamType[] = []
+  turnier.expand.groupA && turnier.expand.groupA.forEach((t: teamType) => alleTeams.push(t))
+  turnier.expand.groupB && turnier.expand.groupB.forEach((t: teamType) => alleTeams.push(t))
+  turnier.expand.groupC && turnier.expand.groupC.forEach((t: teamType) => alleTeams.push(t))
+  turnier.expand.groupD && turnier.expand.groupD.forEach((t: teamType) => alleTeams.push(t))
+  turnier.expand.groupE && turnier.expand.groupE.forEach((t: teamType) => alleTeams.push(t))
 
   useEffect(() => {
     try {
@@ -53,21 +61,34 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
   useEffect(() => {
 
-    setFilteredMatches(matches.filter(f => {
+    setOpenMatches(matches.filter(f => {
       return !games.some(sp => sp.home_team === f.home_team && sp.away_team === f.away_team)
     }))
 
 
+    //KO-Phase
+    if (!openMatches.some(f => f.game_type == "Gruppenphase")) {
+
+      console.log("Alle Teams", alleTeams)
+
+      const { allMatches, finalScoreBoard } = matchmakingKO(turnier.id!, getScoreBoard(games, alleTeams), games)
+
+      setKOMatches(allMatches)
+
+
+    }
+
   }, [games])
 
-  console.log(filteredMatches)
+
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{turnier.tournament_name} - {filteredMatches.length > 0 ? `${filteredMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
+        <CardTitle>{turnier.tournament_name} - {openMatches.length > 0 || koMatches.length > 0 ? `${openMatches.length + koMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
         <CardContent>
-          {filteredMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
+          {openMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
+          {koMatches.map(kg => <GameForm key={kg.game_number} leftGames={kg} />)}
         </CardContent>
       </CardHeader>
     </Card>
