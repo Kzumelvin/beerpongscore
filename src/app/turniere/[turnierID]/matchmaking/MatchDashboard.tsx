@@ -17,7 +17,7 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
 
   const [games, setGames] = useState(playedGames)
-  const [openMatches, setOpenMatches] = useState<gameType[]>([])
+  const [openMatches, setOpenMatches] = useState<gameType[]>(matches.filter(f => !games.some(sp => sp.home_team == f.home_team && sp.away_team == f.away_team)))
   const [koMatches, setKOMatches] = useState<gameType[]>([])
   const [finalsScore, setFinalsScore] = useState<finaleScoreBoard>([])
 
@@ -72,19 +72,28 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
     console.log("Set Open Matches", openMatches)
 
-    const { allMatches, finalScoreBoard } = matchmakingKO(turnier.id!, groupScoreBoard, games)
+    if (openMatches.length == 0) {
+      const { allMatches, finalScoreBoard } = matchmakingKO(turnier.id!, groupScoreBoard, games)
 
-    //KO-Phase
-
-
-    setKOMatches(allMatches)
-    setFinalsScore(finalScoreBoard)
+      //KO-Phase
 
 
+      setKOMatches(allMatches)
+      setFinalsScore(finalScoreBoard)
+
+    }
 
   }, [games])
 
 
+  useEffect(() => {
+
+
+
+
+
+
+  }, [setOpenMatches])
 
   return (
     <div className='flex flex-col gap-y-2'>
