@@ -686,6 +686,8 @@ export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard,
           finalIndex: 2
         })
 
+        ThreeScoreBoard.splice(scoreIndex, 1)
+
         let scoreIndexWin = ThreeScoreBoard.findIndex(f => f.team.id == kg.home_team)
         finalScoreBoard.push({
           team: ThreeScoreBoard[scoreIndexWin].team,
@@ -699,6 +701,7 @@ export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard,
           finalIndex: 3
         })
 
+        ThreeScoreBoard.splice(scoreIndexWin, 1)
 
       }
       if (kg.home_cups! < kg.away_cups!) {
@@ -716,6 +719,8 @@ export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard,
           finalIndex: 2
         })
 
+        ThreeScoreBoard.splice(scoreIndex, 1)
+
         let scoreIndexWin = ThreeScoreBoard.findIndex(f => f.team.id == kg.away_team)
         finalScoreBoard.push({
           team: ThreeScoreBoard[scoreIndexWin].team,
@@ -728,6 +733,8 @@ export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard,
           groupIndex: groupScoreBoard.findIndex(f => f.team.id == kg.away_team) + 1,
           finalIndex: 3
         })
+
+        ThreeScoreBoard.splice(scoreIndexWin, 1)
 
         console.log("Ausscheidungsindex Spiel um Platz 3", scoreIndex)
 
@@ -751,7 +758,7 @@ export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard,
   //Analyse Finale
   console.log("Größe Scoreboard vor Finale", scoreBoard.length)
 
-  if (scoreBoard.length == 2) {
+  if (scoreBoard.length == 2 && ThreeScoreBoard.length == 0) {
     let finalGames: gameType[] = []
 
     let gamesNumber = 1

@@ -15,6 +15,7 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
   let matches = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC, turnier.expand.groupD, turnier.expand.groupE)
 
+
   const [games, setGames] = useState(playedGames)
   const [openMatches, setOpenMatches] = useState<gameType[]>([])
   const [koMatches, setKOMatches] = useState<gameType[]>([])
@@ -66,21 +67,20 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
   useEffect(() => {
 
-    setOpenMatches(matches.filter(f => {
-      return !games.some(sp => sp.home_team === f.home_team && sp.away_team === f.away_team)
-    }))
+    let filteredMatches = matches.filter(f => !games.some(sp => sp.home_team == f.home_team && sp.away_team == f.away_team))
+    setOpenMatches(filteredMatches)
 
+    console.log("Set Open Matches", openMatches)
+
+    const { allMatches, finalScoreBoard } = matchmakingKO(turnier.id!, groupScoreBoard, games)
 
     //KO-Phase
-    if (!openMatches.some(f => f.game_type == "Gruppenphase")) {
-
-      const { allMatches, finalScoreBoard } = matchmakingKO(turnier.id!, groupScoreBoard, games)
-
-      setKOMatches(allMatches)
-      setFinalsScore(finalScoreBoard)
 
 
-    }
+    setKOMatches(allMatches)
+    setFinalsScore(finalScoreBoard)
+
+
 
   }, [games])
 
