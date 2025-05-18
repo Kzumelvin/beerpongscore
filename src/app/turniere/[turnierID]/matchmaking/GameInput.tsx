@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 import { pb } from "@/lib/pocketbase"
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 
 const formSchema = z.object({
   hometeam_id: z.string().min(2).max(50),
@@ -78,7 +79,7 @@ export default function GameForm({ leftGames }: { leftGames: gameType }) {
           name="gameNumber"
           render={({ field }) => (
             <FormItem className="w-3 mb-2">
-              <FormLabel><p>{field.value}</p></FormLabel>
+              <FormLabel>{field.value}</FormLabel>
             </FormItem>
           )}
         />
@@ -86,7 +87,7 @@ export default function GameForm({ leftGames }: { leftGames: gameType }) {
           control={form.control}
           name="gametype"
           render={({ field }) => (
-            <FormItem className="w-28 mb-2">
+            <FormItem className="w-fit mb-2">
               <FormLabel><p>{field.value}</p></FormLabel>
             </FormItem>
           )}
@@ -95,7 +96,7 @@ export default function GameForm({ leftGames }: { leftGames: gameType }) {
           control={form.control}
           name="groupLetter"
           render={({ field }) => (
-            <FormItem className="w-3 mb-2">
+            <FormItem className="w-fit mb-2 text-left">
               <FormLabel><p>{field.value}</p></FormLabel>
             </FormItem>
           )}
@@ -142,8 +143,7 @@ export default function GameForm({ leftGames }: { leftGames: gameType }) {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
-
+        <Button type="submit">Speichern</Button>
       </form>
     </Form>
   )

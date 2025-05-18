@@ -9,7 +9,7 @@ function CompleteFinalTable({ score }: { score: finaleScoreBoard }) {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Gesamttabelle</CardTitle>
+                <CardTitle>Finaltabelle</CardTitle>
             </CardHeader>
             <CardContent>
                 <Table>

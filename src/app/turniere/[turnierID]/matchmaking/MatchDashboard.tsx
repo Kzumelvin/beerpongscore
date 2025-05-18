@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import GameForm from './GameInput'
 import CompleteTable from '../CompleteTable'
 import CompleteFinalTable from '../CompleteFinalTable'
+import { Separator } from '@/components/ui/separator'
 
 function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, playedGames: gameType[] }) {
 
@@ -86,17 +87,21 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{turnier.tournament_name} - {openMatches.length > 0 || koMatches.length > 0 ? `${openMatches.length + koMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
-        <CardContent>
-          {openMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
-          {koMatches.map(kg => <GameForm key={kg.game_number} leftGames={kg} />)}
-          <CompleteTable score={groupScoreBoard} />
-          <CompleteFinalTable score={finalsScore} />
-        </CardContent>
-      </CardHeader>
-    </Card>
+    <div className='flex flex-col gap-y-2'>
+      <Card>
+        <CardHeader>
+          <CardTitle>{turnier.tournament_name} - {openMatches.length > 0 || koMatches.length > 0 ? `${openMatches.length + koMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
+          <CardContent className='flex flex-col gap-y-2'>
+            {openMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
+            <Separator className='my-4' />
+            {koMatches.map(kg => <GameForm key={kg.game_number} leftGames={kg} />)}
+          </CardContent>
+        </CardHeader>
+      </Card>
+      <CompleteTable score={groupScoreBoard} />
+      <CompleteFinalTable score={finalsScore} />
+    </div>
+
   )
 }
 
