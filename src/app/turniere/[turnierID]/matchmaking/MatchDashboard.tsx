@@ -10,6 +10,8 @@ import GameForm from './GameInput'
 import CompleteTable from '../CompleteTable'
 import CompleteFinalTable from '../CompleteFinalTable'
 import { Separator } from '@/components/ui/separator'
+import GroupTable from '../GroupTable'
+import { scoreBoard } from '@/lib/beerpong'
 
 function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, playedGames: gameType[] }) {
 
@@ -22,11 +24,33 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
   const [finalsScore, setFinalsScore] = useState<finaleScoreBoard>([])
 
   let alleTeams: teamType[] = []
-  turnier.expand.groupA && turnier.expand.groupA.forEach((t: teamType) => alleTeams.push(t))
-  turnier.expand.groupB && turnier.expand.groupB.forEach((t: teamType) => alleTeams.push(t))
-  turnier.expand.groupC && turnier.expand.groupC.forEach((t: teamType) => alleTeams.push(t))
-  turnier.expand.groupD && turnier.expand.groupD.forEach((t: teamType) => alleTeams.push(t))
-  turnier.expand.groupE && turnier.expand.groupE.forEach((t: teamType) => alleTeams.push(t))
+  let scoreA: scoreBoard = []
+  let scoreB: scoreBoard = []
+  let scoreC: scoreBoard = []
+  let scoreD: scoreBoard = []
+  let scoreE: scoreBoard = []
+
+  if (turnier.expand.groupA) {
+    turnier.expand.groupA.forEach((t: teamType) => alleTeams.push(t))
+    scoreA = getScoreBoard(games, turnier.expand.groupA)
+  }
+  if (turnier.expand.groupB) {
+    turnier.expand.groupB.forEach((t: teamType) => alleTeams.push(t))
+    scoreB = getScoreBoard(games, turnier.expand.groupB)
+  }
+  if (turnier.expand.groupC) {
+    turnier.expand.groupC.forEach((t: teamType) => alleTeams.push(t))
+    scoreC = getScoreBoard(games, turnier.expand.groupC)
+  }
+  if (turnier.expand.groupD) {
+    turnier.expand.groupD.forEach((t: teamType) => alleTeams.push(t))
+    scoreD = getScoreBoard(games, turnier.expand.groupD)
+  }
+  if (turnier.expand.groupC) {
+    turnier.expand.groupE.forEach((t: teamType) => alleTeams.push(t))
+    scoreE = getScoreBoard(games, turnier.expand.groupC)
+  }
+
 
   const groupScoreBoard = getScoreBoard(games.filter(f => f.game_type === "Gruppenphase"), alleTeams)
 
@@ -107,8 +131,19 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
           </CardContent>
         </CardHeader>
       </Card>
-      <CompleteTable score={groupScoreBoard} />
-      <CompleteFinalTable score={finalsScore} />
+      <div className='flex flex-col lg:grid lg:grid-cols-2 gap-3 '>
+        <div className='flex flex-col'>
+          {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
+          {scoreB.length > 0 ? <GroupTable score={scoreB} title="B" /> : ""}
+          {scoreC.length > 0 ? <GroupTable score={scoreC} title="C" /> : ""}
+          {scoreD.length > 0 ? <GroupTable score={scoreD} title="D" /> : ""}
+          {scoreE.length > 0 ? <GroupTable score={scoreE} title="E" /> : ""}
+        </div>
+        <div className='flex flex-col gap-y-3'>
+          <CompleteTable score={groupScoreBoard} />
+          <CompleteFinalTable score={finalsScore} />
+        </div>
+      </div>
     </div>
 
   )

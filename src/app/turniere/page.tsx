@@ -12,12 +12,14 @@ async function page() {
 
 
   return (
-    <div className='flex flex-col gap-4'>
-      {turniere.filter(f => f.groupA.length > 0).map(t => (
-        <Link key={t.id} href={`/turniere/${t.id}`} className='w-10 h-auto'>
-          <Button>{t.tournament_name}</Button>
-        </Link>
-      ))}
+    <div>
+      <div className='flex flex-col gap-4'>
+        {turniere.filter(f => f.groupA.length > 0).map(t => (
+          <Link key={t.id} href={`/turniere/${t.id}`} className='w-10 h-auto'>
+            <Button>{t.tournament_name}</Button>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

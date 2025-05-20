@@ -19,10 +19,10 @@ import {
   IconUsers,
 } from "@tabler/icons-react"
 
-import { NavDocuments } from "@/components/nav-documents"
-import { NavMain } from "@/components/nav-main"
-import { NavSecondary } from "@/components/nav-secondary"
-import { NavUser } from "@/components/nav-user"
+import { NavDocuments } from "@/components/dashboard/nav-documents"
+import { NavMain } from "@/components/dashboard/nav-main"
+import { NavSecondary } from "@/components/dashboard/nav-secondary"
+import { NavUser } from "@/components/dashboard/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -160,9 +160,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
+              <a href="/">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">Beerpongturnier</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

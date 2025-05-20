@@ -4,17 +4,24 @@ import { useEffect, useState } from 'react'
 import { gameType, turnierType, teamType } from '@/lib/pocketbase'
 import { toast } from 'sonner'
 import { pb } from '@/lib/pocketbase'
-import { scoreBoard, getScoreBoard } from '@/lib/beerpong'
+import { scoreBoard, getScoreBoard, matchmakingGroup } from '@/lib/beerpong'
 import { Card, CardTitle, CardHeader, CardContent, CardDescription, CardFooter } from '@/components/ui/card'
 import Link from 'next/link'
 import GroupTable from './GroupTable'
 import CompleteTable from './CompleteTable'
 import { Button } from '@/components/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import FinaleBoard from './FinaleBoard'
+import GamesTable from './GamesTable'
+import { Separator } from '@/components/ui/separator'
+
+function TurnierDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turnierType }) {
 
 
-function GroupDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turnierType }) {
+  let openGames = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC, turnier.expand.groupD, turnier.expand.groupE)
 
   const [games, setGames] = useState<gameType[]>(spiele)
+  const [openMatches, setOpenMatches] = useState<gameType[]>(openGames.filter(f => !games.some(g => g.home_team == f.home_team && g.away_team == f.away_team)))
 
   useEffect(() => {
 
@@ -46,7 +53,7 @@ function GroupDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turn
           } catch (e) { toast.error("Fehler bei Spielanlage", { description: `${e}` }) }
         }
 
-      })
+      }, { expand: "home_team, away_team, tournament" })
 
     } catch (e) {
       toast.error("Fehler", { description: `${e}` })
@@ -56,6 +63,11 @@ function GroupDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turn
 
   })
 
+  useEffect(() => {
+
+    setOpenMatches(openGames.filter(f => !games.some(g => g.home_team == f.home_team && g.away_team == f.away_team)))
+
+  }, [games])
 
   let alleTeams: teamType[] = []
   let scoreA: scoreBoard = []
@@ -102,9 +114,10 @@ function GroupDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turn
 
   gesamtScore = getScoreBoard(games, alleTeams)
 
+
   return (
 
-    <Card className="border border-primary shadow-lg w-full h-fit">
+    <Card className="shadow-lg w-full h-fit">
       <CardHeader>
         <CardTitle>
           Matchübersicht BPT {turnier.tournament_number}
@@ -112,36 +125,42 @@ function GroupDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turn
         <CardDescription></CardDescription>
       </CardHeader>
       <CardContent className="w-full space-y-2">
-        <div className="w-full flex justify-end items-center">
-          <Link href={`/turniere/${turnier.id}/finals`} >
-            <Button className="" variant={"outline"}>
-              Finals
-            </Button>
-          </Link>
-          <Link href={`/turniere/${turnier.id}/matchmaking`} >
-            <Button className="" variant={"outline"}>
-              Spiele
-            </Button>
-          </Link>
-        </div>
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
-          <div className="w-full flex flex-col gap-y-3 max-h-screen overflow-auto">
-            {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
-            {scoreB.length > 0 ? <GroupTable score={scoreB} title="B" /> : ""}
-            {scoreC.length > 0 ? <GroupTable score={scoreC} title="C" /> : ""}
-            {scoreD.length > 0 ? <GroupTable score={scoreD} title="D" /> : ""}
-            {scoreE.length > 0 ? <GroupTable score={scoreE} title="E" /> : ""}
-          </div>
+        <Tabs defaultValue="gruppe" className="w-full">
+          <TabsList>
+            <TabsTrigger value="gruppe">Gruppenphase</TabsTrigger>
+            <TabsTrigger value="finale">KO-Phase</TabsTrigger>
+          </TabsList>
+          <TabsContent value="gruppe">
+            <div className='flex flex-col gap-y-2 w-full'>
+              <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
+                <div className="w-full flex flex-col gap-y-3 max-h-screen overflow-auto">
+                  {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
+                  {scoreB.length > 0 ? <GroupTable score={scoreB} title="B" /> : ""}
+                  {scoreC.length > 0 ? <GroupTable score={scoreC} title="C" /> : ""}
+                  {scoreD.length > 0 ? <GroupTable score={scoreD} title="D" /> : ""}
+                  {scoreE.length > 0 ? <GroupTable score={scoreE} title="E" /> : ""}
+                </div>
 
-          <div className="w-full">
-            <CompleteTable score={gesamtScore} />
-          </div>
-        </div>
+                <div className="w-full">
+                  <CompleteTable score={gesamtScore} />
+                </div>
+              </div>
+              <Separator className='my-4' />
+              <div className='flex flex-row gap-3 w-full'>
+                <GamesTable games={openMatches} title='Kommende Spiele' />
+                <GamesTable games={games} title='Gespielte Spiele' />
+              </div>
+            </div>
+          </TabsContent>
+          <TabsContent value="finale">
+            <FinaleBoard spiele={games} tournamentID={turnier.id!} groupScoreBoard={gesamtScore} />
+          </TabsContent>
+        </Tabs>
+
       </CardContent>
       <CardFooter></CardFooter>
     </Card>
-
   )
 }
 
-export default GroupDashboard
+export default TurnierDashboard

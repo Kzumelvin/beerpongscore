@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/dashboard/app-sidebar";
+import { SiteHeader } from "@/components/dashboard/site-header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +31,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <Toaster />
+        <SidebarProvider style={{
+          "--sidebar-width": "calc(var(--spacing) * 72)",
+          "--header-height": "calc(var(--spacing) * 12)",
+        } as React.CSSProperties}>
+
+          <AppSidebar variant="inset" />
+          <SidebarInset>
+            <SiteHeader title="Beerpongturnier" />
+            {children}
+          </SidebarInset>
+          <Toaster />
+        </SidebarProvider>
       </body>
     </html>
   );

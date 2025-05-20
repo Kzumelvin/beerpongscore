@@ -1,6 +1,6 @@
 import React from 'react'
 import { gameType, pb, turnierType } from '@/lib/pocketbase'
-import GroupDashboard from './GroupDashboard'
+import TurnierDashboard from './TurnierDashboard'
 
 async function page({ params }: { params: Promise<{ turnierID: string }> }) {
 
@@ -18,7 +18,10 @@ async function page({ params }: { params: Promise<{ turnierID: string }> }) {
 
 
   return (
-    <GroupDashboard spiele={games} turnier={turnier} />
+    <div className='p-3'>
+
+      <TurnierDashboard spiele={games} turnier={turnier} />
+    </div>
   )
 }
 
