@@ -670,6 +670,8 @@ export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard,
 
       console.log("Gruppenphase", groupScoreBoard)
 
+      console.log("ThreeScoreBoard", ThreeScoreBoard)
+
       // Übertrag von GruppenTabelel in Endtabelle
       if (kg.home_cups! > kg.away_cups!) {
         let scoreIndex = ThreeScoreBoard.findIndex(f => f.team.id == kg.away_team)
@@ -705,8 +707,7 @@ export function matchmakingKO(tournamentID: string, groupScoreBoard: scoreBoard,
 
       }
       if (kg.home_cups! < kg.away_cups!) {
-        let scoreIndex = scoreBoard.findIndex(f => f.team.id == kg.home_team)
-
+        let scoreIndex = ThreeScoreBoard.findIndex(f => f.team.id == kg.home_team)
         finalScoreBoard.push({
           team: ThreeScoreBoard[scoreIndex].team,
           games: ThreeScoreBoard[scoreIndex].games,
