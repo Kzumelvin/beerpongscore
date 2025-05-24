@@ -18,6 +18,7 @@ import {
   IconSettings,
   IconUsers,
 } from "@tabler/icons-react"
+import { LogIn } from "lucide-react"
 
 import { NavDocuments } from "@/components/dashboard/nav-documents"
 import { NavMain } from "@/components/dashboard/nav-main"
@@ -33,6 +34,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
+import { useUser } from "@auth0/nextjs-auth0"
 
 const data = {
   user: {
@@ -117,20 +119,11 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Settings",
-      url: "#",
-      icon: IconSettings,
-    },
-    {
-      title: "Get Help",
+      title: "Beerpong Wiki",
       url: "#",
       icon: IconHelp,
     },
-    {
-      title: "Search",
-      url: "#",
-      icon: IconSearch,
-    },
+
   ],
   documents: [
     {
@@ -152,6 +145,7 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { user, isLoading } = useUser()
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -174,7 +168,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        {user && !isLoading &&
+          <NavUser user={user} />
+        }
+        {!user &&
+          <Link href="/auth/login" className="cursor-pointer">
+            <SidebarMenuButton className="p-5 flex items-center justify-center">
+              <LogIn className="size-3" />
+              <span className="text-md">Log in</span>
+            </SidebarMenuButton>
+          </Link>
+        }
       </SidebarFooter>
     </Sidebar>
   )

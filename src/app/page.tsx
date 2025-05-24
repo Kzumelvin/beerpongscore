@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { auth0 } from "@/lib/auth0";
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await auth0.getSession()
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -12,6 +16,10 @@ export default function Home() {
           height={38}
           priority
         />
+        <a href="/auth/login?screen_hint=signup">Sign up</a>
+        <a href="auth/login">Log in</a>
+        <a href="/auth/logout">Log out</a>
+        <p>{session?.user.name}</p>
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}

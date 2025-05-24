@@ -33,6 +33,7 @@ export type turnierType = {
   tournament_name: string,
   tournament_number: number,
   tournament_participants: number,
+  tournament_date?: Date,
   groupA: teamType[],
   groupB: teamType[],
   groupC: teamType[],
