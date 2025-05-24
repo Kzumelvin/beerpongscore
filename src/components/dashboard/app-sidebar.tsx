@@ -172,7 +172,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <NavUser user={user} />
         }
         {!user &&
-          <Link href="/auth/login" className="cursor-pointer">
+          <Link href="/auth/login/" className="cursor-pointer">
             <SidebarMenuButton className="p-5 flex items-center justify-center">
               <LogIn className="size-3" />
               <span className="text-md">Log in</span>

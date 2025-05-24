@@ -17,13 +17,3 @@ export async function middleware(request: NextRequest) {
   return authRes
 }
 
-
-export const config = {
-  matcher: [
-    '/tuniere/:path',
-    '/anlage/:path',
-    '/dasboard/:path',
-  ]
-}
-
-
