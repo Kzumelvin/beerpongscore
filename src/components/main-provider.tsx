@@ -20,7 +20,7 @@ export default function MainProvider({ children }: { children: React.ReactNode }
         "--header-height": "calc(var(--spacing) * 12)",
       } as React.CSSProperties}>
 
-        <AppSidebar variant="inset" />
+        <AppSidebar variant="sidebar" />
         <SidebarInset>
           <SiteHeader title="Beerpongturnier" />
           {children}

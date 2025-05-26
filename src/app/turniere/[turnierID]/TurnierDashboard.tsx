@@ -132,8 +132,8 @@ function TurnierDashboard({ spiele, turnier }: { spiele: gameType[], turnier: tu
           </TabsList>
           <TabsContent value="gruppe">
             <div className='flex flex-col gap-y-2 w-full'>
-              <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
-                <div className="w-full flex flex-col gap-y-3 max-h-screen overflow-auto">
+              <div className="flex flex-col basis-1 lg:grid lg:grid-cols-2 gap-4">
+                <div className="w-full flex flex-col gap-3 max-h-screen overflow-auto">
                   {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
                   {scoreB.length > 0 ? <GroupTable score={scoreB} title="B" /> : ""}
                   {scoreC.length > 0 ? <GroupTable score={scoreC} title="C" /> : ""}

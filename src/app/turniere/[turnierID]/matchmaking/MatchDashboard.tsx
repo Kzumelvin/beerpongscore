@@ -46,7 +46,7 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
     turnier.expand.groupD.forEach((t: teamType) => alleTeams.push(t))
     scoreD = getScoreBoard(games, turnier.expand.groupD)
   }
-  if (turnier.expand.groupC) {
+  if (turnier.expand.groupE) {
     turnier.expand.groupE.forEach((t: teamType) => alleTeams.push(t))
     scoreE = getScoreBoard(games, turnier.expand.groupC)
   }
@@ -121,16 +121,6 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
   return (
     <div className='flex flex-col gap-y-2'>
-      <Card>
-        <CardHeader>
-          <CardTitle>{turnier.tournament_name} - {openMatches.length > 0 || koMatches.length > 0 ? `${openMatches.length + koMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
-          <CardContent className='flex flex-col gap-y-2'>
-            {openMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
-            <Separator className='my-4' />
-            {koMatches.map(kg => <GameForm key={kg.game_number} leftGames={kg} />)}
-          </CardContent>
-        </CardHeader>
-      </Card>
       <div className='flex flex-col lg:grid lg:grid-cols-2 gap-3 '>
         <div className='flex flex-col'>
           {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
@@ -144,6 +134,17 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
           <CompleteFinalTable score={finalsScore} />
         </div>
       </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>{turnier.tournament_name} - {openMatches.length > 0 || koMatches.length > 0 ? `${openMatches.length + koMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
+          <CardContent className='flex flex-col gap-y-2'>
+            {openMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
+            <Separator className='my-4' />
+            {koMatches.map(kg => <GameForm key={kg.game_number} leftGames={kg} />)}
+          </CardContent>
+        </CardHeader>
+      </Card>
+
     </div>
 
   )
