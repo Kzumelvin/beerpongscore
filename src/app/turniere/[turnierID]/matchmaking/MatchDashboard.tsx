@@ -29,26 +29,32 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
   let scoreC: scoreBoard = []
   let scoreD: scoreBoard = []
   let scoreE: scoreBoard = []
+  let anzahlGruppen: number = 0
 
   if (turnier.expand.groupA) {
     turnier.expand.groupA.forEach((t: teamType) => alleTeams.push(t))
     scoreA = getScoreBoard(games, turnier.expand.groupA)
+    anzahlGruppen += 1
   }
   if (turnier.expand.groupB) {
     turnier.expand.groupB.forEach((t: teamType) => alleTeams.push(t))
     scoreB = getScoreBoard(games, turnier.expand.groupB)
+    anzahlGruppen += 1
   }
   if (turnier.expand.groupC) {
     turnier.expand.groupC.forEach((t: teamType) => alleTeams.push(t))
     scoreC = getScoreBoard(games, turnier.expand.groupC)
+    anzahlGruppen += 1
   }
   if (turnier.expand.groupD) {
     turnier.expand.groupD.forEach((t: teamType) => alleTeams.push(t))
     scoreD = getScoreBoard(games, turnier.expand.groupD)
+    anzahlGruppen += 1
   }
   if (turnier.expand.groupE) {
     turnier.expand.groupE.forEach((t: teamType) => alleTeams.push(t))
     scoreE = getScoreBoard(games, turnier.expand.groupC)
+    anzahlGruppen += 1
   }
 
 
@@ -122,7 +128,7 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
   return (
     <div className='flex flex-col gap-y-2'>
       <div className='flex flex-col lg:grid lg:grid-cols-2 gap-3 '>
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-3'>
           {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
           {scoreB.length > 0 ? <GroupTable score={scoreB} title="B" /> : ""}
           {scoreC.length > 0 ? <GroupTable score={scoreC} title="C" /> : ""}
@@ -138,8 +144,9 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
         <CardHeader>
           <CardTitle>{turnier.tournament_name} - {openMatches.length > 0 || koMatches.length > 0 ? `${openMatches.length + koMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
           <CardContent className='flex flex-col gap-y-2'>
-            {openMatches.map(fg => <GameForm key={fg.game_number} leftGames={fg} />)}
-            <Separator className='my-4' />
+            {openMatches.map((fg, idx) => (
+              <GameForm key={fg.game_number} leftGames={fg} />
+            ))}
             {koMatches.map(kg => <GameForm key={kg.game_number} leftGames={kg} />)}
           </CardContent>
         </CardHeader>
