@@ -1,5 +1,5 @@
 import React from 'react'
-import { pb, teamType, turnierType, gameType } from '@/lib/pocketbase'
+import { pb, teamType, turnierType, gameType, playerType } from '@/lib/pocketbase'
 import MatchDashboard from './MatchDashboard'
 import { AdminEmails, auth0 } from '@/lib/auth0'
 import { redirect } from 'next/navigation'
@@ -17,17 +17,23 @@ async function page({ params }: { params: Promise<{ turnierID: string }> }) {
     expand: "groupA, groupB, groupC, groupD, groupE"
   })
 
+  const allTurniere: turnierType[] = await pb.collection("tournaments").getFullList({
+    sort: "-tournament_number"
+  })
+
   const spiele: gameType[] = await pb.collection("games").getFullList({
     expand: "home_team, away_team, tournament",
     sort: "-game_number",
-    filter: `tournament="${id}"`
+  })
+
+  const players: playerType[] = await pb.collection("players").getFullList({
 
   })
 
 
   return (
     <div className='p-4'>
-      <MatchDashboard playedGames={spiele} turnier={turnier} />
+      <MatchDashboard allTurniere={allTurniere} spieler={players} playedGames={spiele} turnier={turnier} />
     </div>
   )
 }

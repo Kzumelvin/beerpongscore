@@ -18,6 +18,12 @@ export type gameType = {
 
 export type playerType = {
   id?: string,
+  player_name: string,
+  back_number: string | undefined,
+  elo: number,
+  active: boolean,
+  picture_url: string,
+  bio: string,
   expand?: any
 }
 
@@ -39,6 +45,7 @@ export type turnierType = {
   groupC: teamType[],
   groupD: teamType[],
   groupE: teamType[],
-  expand: any
+  expand: any,
+  next: boolean
 }
 

@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { teamType, gameType, turnierType } from '@/lib/pocketbase'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { teamType, gameType, turnierType, playerType } from '@/lib/pocketbase'
 import { finaleScoreBoard, getScoreBoard, matchmakingGroup, matchmakingKO } from '@/lib/beerpong'
 import { pb } from '@/lib/pocketbase'
 import { toast } from 'sonner'
@@ -12,16 +13,23 @@ import CompleteFinalTable from '../CompleteFinalTable'
 import { Separator } from '@/components/ui/separator'
 import GroupTable from '../GroupTable'
 import { scoreBoard } from '@/lib/beerpong'
+import { eloBerechnung, eloListType } from '@/lib/elo'
+import EloTable from './EloTable'
 
-function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, playedGames: gameType[] }) {
+function MatchDashboard({ turnier, playedGames, spieler, allTurniere }: { turnier: turnierType, playedGames: gameType[], spieler: playerType[], allTurniere: turnierType[] }) {
 
   let matches = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC, turnier.expand.groupD, turnier.expand.groupE)
 
 
-  const [games, setGames] = useState(playedGames)
+  const [games, setGames] = useState(playedGames.filter(f => f.expand.tournament.tournament_number == turnier.tournament_number))
   const [openMatches, setOpenMatches] = useState<gameType[]>(matches.filter(f => !games.some(sp => sp.home_team == f.home_team && sp.away_team == f.away_team)))
   const [koMatches, setKOMatches] = useState<gameType[]>([])
   const [finalsScore, setFinalsScore] = useState<finaleScoreBoard>([])
+
+
+  //Elo Tabelle
+  const [eloGames, setEloGames] = useState(playedGames)
+  const [eloList, setEloList] = useState<eloListType[]>(eloBerechnung(spieler, eloGames, allTurniere))
 
   let alleTeams: teamType[] = []
   let scoreA: scoreBoard = []
@@ -81,6 +89,7 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
         if (e.action == "create") {
           setGames((oldArray) => [...oldArray, game])
+          setEloGames((oldArray) => [...oldArray, game])
           toast.success("Ergebnis gespeichert:", { description: `${game.expand.home_team.team_name} vs. ${game.expand.away_team.team_name} | ${game.home_cups}:${game.away_cups}` })
         }
 
@@ -118,28 +127,43 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
 
   useEffect(() => {
 
+    setEloList(eloBerechnung(spieler, eloGames, allTurniere))
+
+    console.log(eloList)
+
+  }, [eloGames])
 
 
 
-
-
-  }, [setOpenMatches])
 
   return (
     <div className='flex flex-col gap-y-2'>
-      <div className='flex flex-col lg:grid lg:grid-cols-2 gap-3 '>
-        <div className='flex flex-col gap-3'>
-          {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
-          {scoreB.length > 0 ? <GroupTable score={scoreB} title="B" /> : ""}
-          {scoreC.length > 0 ? <GroupTable score={scoreC} title="C" /> : ""}
-          {scoreD.length > 0 ? <GroupTable score={scoreD} title="D" /> : ""}
-          {scoreE.length > 0 ? <GroupTable score={scoreE} title="E" /> : ""}
-        </div>
-        <div className='flex flex-col gap-y-3'>
-          <CompleteTable score={groupScoreBoard} />
-          <CompleteFinalTable score={finalsScore} />
-        </div>
-      </div>
+      <Tabs defaultValue='group' className='w-full'>
+        <TabsList>
+          <TabsTrigger value='group'>Gruppenphase</TabsTrigger>
+          <TabsTrigger value='final'>Finale</TabsTrigger>
+        </TabsList>
+        <TabsContent value='group'>
+          <div className='flex flex-col lg:grid lg:grid-cols-2 gap-3 '>
+            <div className='flex flex-col gap-3'>
+              {scoreA.length > 0 ? <GroupTable score={scoreA} title="A" /> : ""}
+              {scoreB.length > 0 ? <GroupTable score={scoreB} title="B" /> : ""}
+              {scoreC.length > 0 ? <GroupTable score={scoreC} title="C" /> : ""}
+              {scoreD.length > 0 ? <GroupTable score={scoreD} title="D" /> : ""}
+              {scoreE.length > 0 ? <GroupTable score={scoreE} title="E" /> : ""}
+            </div>
+            <div className='flex flex-col gap-y-3'>
+              <CompleteTable score={groupScoreBoard} />
+            </div>
+          </div>
+        </TabsContent>
+        <TabsContent value='final'>
+          <div className='flex flex-row'>
+            <CompleteFinalTable score={finalsScore} />
+            <EloTable eloList={eloList} />
+          </div>
+        </TabsContent>
+      </Tabs >
       <Card>
         <CardHeader>
           <CardTitle>{turnier.tournament_name} - {openMatches.length > 0 || koMatches.length > 0 ? `${openMatches.length + koMatches.length} Spiele offen` : "Keine Spiele offen"}</CardTitle>
@@ -152,7 +176,7 @@ function MatchDashboard({ turnier, playedGames }: { turnier: turnierType, played
         </CardHeader>
       </Card>
 
-    </div>
+    </div >
 
   )
 }
