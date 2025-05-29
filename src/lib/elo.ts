@@ -11,6 +11,11 @@ export type eloListType = {
   elo: eloType[]
 }
 
+export type deltaType = {
+  player_id: string,
+  delta: number
+}
+
 export const Q = 700
 export const K = 40
 export const STARTELO = 1800
@@ -34,11 +39,13 @@ export function k_factor(elo: number) {
 export function new_Elo(elo_Eigen: number, elo_Gegner: number, punkte: number) {
   const k = k_factor(elo_Eigen)
   const Ewert = Ewert_A(elo_Eigen, elo_Gegner)
-  return Math.round(elo_Eigen + k * (punkte - Ewert))
+  return Math.round(k * (punkte - Ewert))
 }
 
 
-export function eloBerechnung(spieler: playerType[], games: gameType[], allTurniere: turnierType[]): eloListType[] {
+export function eloBerechnung(spieler: playerType[], games: gameType[], allTurniere: turnierType[], aktTurnier?: turnierType): eloListType[] {
+
+  let deltaList: deltaType[] = []
 
   let eloList: eloListType[] = []
   //Spieler in eloList einfügen
@@ -51,15 +58,20 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
         k_sum: 0
       }]
     })
+
+    deltaList.push({
+      player_id: sp.id!,
+      delta: 0
+    })
   })
 
-  games.sort((a, b) => a.expand.tournament.tournament_number - b.expand.tournament.tournament_number || a.game_number - b.game_number).forEach(g => {
+  games.filter(f => aktTurnier ? f.expand.tournament.tournament_number <= aktTurnier.tournament_number : f).sort((a, b) => a.expand.tournament.tournament_number - b.expand.tournament.tournament_number || a.game_number - b.game_number).forEach(g => {
 
+    //console.log(g.expand.home_team.team_name, "vs.", g.expand.away_team.team_name)
 
     let homepoints = 0
     let awaypoints = 0
     let turNumber = g.expand.tournament.tournament_number
-    let eloDiffGast = 0
 
 
     if (g.home_cups! > g.away_cups!) {
@@ -74,6 +86,8 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
 
     // Betrachte Heim und Gastteam wegen Fairness
     //
+    //
+    //
 
     //Heimteam
     g.expand.home_team.members.forEach((h: string) => {
@@ -83,59 +97,94 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
         let heimEloIndex = eloList[indexHeim].elo.findIndex(f => f.turniernummer == turNumber)
         let oldEloHeim = eloList[indexHeim].elo.at(heimEloIndex)!.values.at(-1)!
 
+
         let indexAway = eloList.findIndex(f => f.player.id == a)
-
-
-
         let awayEloIndex = eloList[indexAway].elo.findIndex(f => f.turniernummer == turNumber)
-
-
         let oldEloAway = eloList[indexAway].elo.at(awayEloIndex)!.values.at(-1)!
 
 
 
-        let newEloHeim = new_Elo(oldEloHeim, oldEloAway, homepoints)
-        let newEloAway = new_Elo(oldEloAway, oldEloHeim, awaypoints)
+        let newEloDeltaHeim = new_Elo(oldEloHeim, oldEloAway, homepoints)
+        let newEloDeltaAway = new_Elo(oldEloAway, oldEloHeim, awaypoints)
+
+
+        deltaList.find(f => f.player_id == h)!.delta += newEloDeltaHeim
+        deltaList.find(f => f.player_id == a)!.delta += newEloDeltaAway
 
         //        console.log(eloList[indexHeim].playerName, oldEloHeim, "-->", newEloHeim)
         //       console.log(eloList[indexAway].playerName, oldEloAway, "-->", newEloAway)
 
-        if (heimEloIndex == -1) {
 
-          eloList[indexHeim].elo.push({
-            turniernummer: turNumber,
-            values: [newEloHeim],
-            k_sum: k_factor(oldEloHeim)
-          })
 
-        } else {
-
-          eloList[indexHeim].elo[heimEloIndex].values.push(newEloHeim)
-          eloList[indexHeim].elo[heimEloIndex].k_sum += k_factor(oldEloHeim)
-
-        }
-
-        if (awayEloIndex == -1) {
-          eloList[indexAway].elo.push({
-            turniernummer: turNumber,
-            values: [newEloAway],
-            k_sum: k_factor(oldEloAway)
-          })
-        } else {
-          eloList[indexAway].elo[awayEloIndex].values.push(newEloAway)
-          eloList[indexAway].elo[awayEloIndex].k_sum += k_factor(oldEloAway)
-        }
 
         //Es gibt noch keine Elo im aktuellen Turnier für Heim
       })
 
+    })
+
+    //Delta zu eloList
+    //Heim
+    g.expand.home_team.members.forEach((h: string) => {
+      let indexHeim = eloList.findIndex(f => f.player.id == h)
+      let heimEloIndex = eloList[indexHeim].elo.findIndex(f => f.turniernummer == turNumber)
+      let oldEloHeim = eloList[indexHeim].elo.at(heimEloIndex)!.values.at(-1)!
+
+      let deltaSum = deltaList.find(f => f.player_id == h)!.delta
+      let newElo = oldEloHeim + deltaSum
+
+      //      console.log(eloList[indexHeim].player.player_name, "Alte Elo", oldEloHeim, "Delta", deltaSum, "Neue Elo", newElo)
+
+      if (heimEloIndex == -1) {
+
+        eloList[indexHeim].elo.push({
+          turniernummer: turNumber,
+          values: [newElo],
+          k_sum: k_factor(oldEloHeim)
+        })
+
+      } else {
+
+        eloList[indexHeim].elo[heimEloIndex].values.push(newElo)
+        eloList[indexHeim].elo[heimEloIndex].k_sum += k_factor(oldEloHeim)
+
+      }
+
+      //Reset Delta
+      deltaList.find(f => f.player_id == h)!.delta = 0
+
+    })
+
+    //Gast
+    //
+    g.expand.away_team.members.forEach((a: string) => {
+      let indexAway = eloList.findIndex(f => f.player.id == a)
+      let awayEloIndex = eloList[indexAway].elo.findIndex(f => f.turniernummer == turNumber)
+      let oldEloAway = eloList[indexAway].elo.at(awayEloIndex)!.values.at(-1)!
+
+      let deltaSum = deltaList.find(f => f.player_id == a)!.delta
+      let newElo = oldEloAway + deltaSum
+
+      //      console.log(eloList[indexAway].player.player_name, "Alte Elo", oldEloAway, "Delta", deltaSum, "Neue Elo", newElo)
+
+      if (awayEloIndex == -1) {
+        eloList[indexAway].elo.push({
+          turniernummer: turNumber,
+          values: [newElo],
+          k_sum: k_factor(oldEloAway)
+        })
+      } else {
+        eloList[indexAway].elo[awayEloIndex].values.push(newElo)
+        eloList[indexAway].elo[awayEloIndex].k_sum += k_factor(oldEloAway)
+      }
+
+      //Reset Delta
+
+      deltaList.find(f => f.player_id == a)!.delta = 0
 
     })
 
 
-    //Heim und Gastteam Elo speichern
 
-    console.log("NACHBERECHNUNG START")
 
   })
 
@@ -143,15 +192,13 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
 
     p.elo.sort((a, b) => a.turniernummer - b.turniernummer)
 
-    allTurniere.filter(f => f.next == false).sort((a, b) => a.tournament_number - b.tournament_number).forEach((t, idx) => {
+    allTurniere.filter(f => f.next == false).filter(f => aktTurnier ? f.tournament_number <= aktTurnier.tournament_number : f).sort((a, b) => a.tournament_number - b.tournament_number).forEach((t, idx) => {
 
       let eloIndex = p.elo.findIndex(f => f.turniernummer == t.tournament_number)
 
       if (eloIndex == -1) {
 
         let alteElo = p.elo.findLast(f => f.turniernummer < t.tournament_number)!.values.at(-1)!
-
-        console.log(p.player.player_name, p.elo)
 
 
         p.elo.push({
@@ -168,6 +215,5 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
   })
 
 
-  console.log("NACHBRECHNUNG ENDE")
   return eloList
 }

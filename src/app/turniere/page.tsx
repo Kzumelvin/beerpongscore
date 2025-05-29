@@ -18,7 +18,7 @@ async function page() {
     <div className='flex flex-row 2xl:grid 2xl:grid-cols-6 justify-center items-center gap-4 flex-wrap w-full p-4'>
       {turniere.map(t => (
         <Link key={t.id} href={`/turniere/${t.id}`}>
-          <Card className='w-60 aspect-video overflow-clip'>
+          <Card className='basis-1 aspect-video overflow-clip'>
             <CardHeader>
               <CardTitle className='text-4xl'>{t.tournament_name}</CardTitle>
             </CardHeader>

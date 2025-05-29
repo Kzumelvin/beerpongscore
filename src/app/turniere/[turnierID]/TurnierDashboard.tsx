@@ -119,8 +119,11 @@ function TurnierDashboard({ spiele, turnier }: { spiele: gameType[], turnier: tu
 
     <Card className="shadow-lg w-full h-fit">
       <CardHeader>
-        <CardTitle>
+        <CardTitle className='flex justify-between'>
           Matchübersicht BPT {turnier.tournament_number}
+          <Link href={`/turniere/${turnier.id!}/matchmaking`}>
+            <Button>Match making</Button>
+          </Link>
         </CardTitle>
         <CardDescription></CardDescription>
       </CardHeader>
@@ -146,7 +149,7 @@ function TurnierDashboard({ spiele, turnier }: { spiele: gameType[], turnier: tu
                 </div>
               </div>
               <Separator className='my-4' />
-              <div className='flex flex-row gap-3 w-full'>
+              <div className='flex flex-row gap-3 basis-1'>
                 <GamesTable games={openMatches} title='Kommende Spiele' />
                 <GamesTable games={games} title='Gespielte Spiele' />
               </div>

@@ -28,8 +28,8 @@ function MatchDashboard({ turnier, playedGames, spieler, allTurniere }: { turnie
 
 
   //Elo Tabelle
+  const [eloList, setEloList] = useState(eloBerechnung(spieler, playedGames, allTurniere, turnier))
   const [eloGames, setEloGames] = useState(playedGames)
-  const [eloList, setEloList] = useState<eloListType[]>(eloBerechnung(spieler, eloGames, allTurniere))
 
   let alleTeams: teamType[] = []
   let scoreA: scoreBoard = []
@@ -122,16 +122,8 @@ function MatchDashboard({ turnier, playedGames, spieler, allTurniere }: { turnie
 
     }
 
+    setEloList(eloBerechnung(spieler, eloGames, allTurniere, turnier))
   }, [games])
-
-
-  useEffect(() => {
-
-    setEloList(eloBerechnung(spieler, eloGames, allTurniere))
-
-    console.log(eloList)
-
-  }, [eloGames])
 
 
 
@@ -158,7 +150,7 @@ function MatchDashboard({ turnier, playedGames, spieler, allTurniere }: { turnie
           </div>
         </TabsContent>
         <TabsContent value='final'>
-          <div className='flex flex-row'>
+          <div className='flex flex-row gap-3'>
             <CompleteFinalTable score={finalsScore} />
             <EloTable eloList={eloList} />
           </div>

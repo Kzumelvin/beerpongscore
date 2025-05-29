@@ -14,6 +14,8 @@ type eloTableType = {
 
 function EloTable({ eloList }: { eloList: eloListType[] }) {
 
+  console.log(eloList)
+
   let data: eloTableType[] = []
 
   eloList.filter(f => f.player.active).forEach(p => {
@@ -61,7 +63,7 @@ function EloTable({ eloList }: { eloList: eloListType[] }) {
               <TableRow key={idx}>
                 <TableCell>{idx + 1}</TableCell>
                 <TableCell>{p.player_name}</TableCell>
-                <TableCell>{p.elo_prozent.toFixed(2)}</TableCell>
+                <TableCell>{p.elo_prozent.toFixed(2).replace(".", ",")}%</TableCell>
                 <TableCell>{p.elo_delta}</TableCell>
                 <TableCell>{p.k_sum}</TableCell>
                 <TableCell>{p.elo_neu}</TableCell>

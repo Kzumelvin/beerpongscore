@@ -22,7 +22,7 @@ function GamesTable({ games, title }: { games: gameType[], title: string }) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {games.sort((a, b) => a.game_number - b.game_number).filter(f => f.game_type == "Gruppenphase").map(game => (
+            {games.sort((a, b) => a.game_number - b.game_number).map(game => (
               <TableRow key={game.game_number}>
                 <TableCell>{game.game_number}</TableCell>
                 <TableCell>{game.groupStage}</TableCell>
