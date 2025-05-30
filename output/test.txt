@@ -1,0 +1,921 @@
+[
+  {
+    "tournament_number": 24,
+    "groups": []
+  },
+  {
+    "tournament_number": 23,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Team Kentsch II"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Auswärtsspiel"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Die Hopfenqueens"
+      },
+      {
+        "groupLetter": "A",
+        "team": "1 and a Half Waidler"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die mongolischen Playboys"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Benjamin Bierchen"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die gefüllte Schnitte und ihr potenter Patissier"
+      }
+    ]
+  },
+  {
+    "tournament_number": 22,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Michael Jackson - Before and After"
+      },
+      {
+        "groupLetter": "A",
+        "team": "The Invincibles"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Baban Club - Mampfen und Dampfen"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Veni, Vidi, Einlochi"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Schröder Sabrina"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die gefüllte Schnitte und ihr potenter Patissier"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Selimon"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      }
+    ]
+  },
+  {
+    "tournament_number": 21,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Baban Club - Mampfen und Dampfen"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Bierkätzchen"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Mama erklärt das BPT"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Juventus Urin"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die mongolischen Playboys"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Auswärtsspiel"
+      }
+    ]
+  },
+  {
+    "tournament_number": 20,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Sophia Kentsch"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Andreas Grill"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Kevin Haberl"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Katharina Kühnelt"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Moritz Fedeneder"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Alexandra Ziegler"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Maria Krysin"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Selina Holmer"
+      },
+      {
+        "groupLetter": "C",
+        "team": "Christian Balk"
+      },
+      {
+        "groupLetter": "C",
+        "team": "Daniel Schröder"
+      },
+      {
+        "groupLetter": "C",
+        "team": "Sophia Koch"
+      },
+      {
+        "groupLetter": "C",
+        "team": "Simon Haas"
+      },
+      {
+        "groupLetter": "D",
+        "team": "Franziska Kentsch"
+      },
+      {
+        "groupLetter": "D",
+        "team": "Fabian Baier"
+      },
+      {
+        "groupLetter": "D",
+        "team": "Ronja Fischer"
+      },
+      {
+        "groupLetter": "D",
+        "team": "Paul Ilmberger"
+      },
+      {
+        "groupLetter": "E",
+        "team": "Simon Schnitzer"
+      },
+      {
+        "groupLetter": "E",
+        "team": "Niko Holopainen"
+      },
+      {
+        "groupLetter": "E",
+        "team": "Daniela Balk"
+      },
+      {
+        "groupLetter": "E",
+        "team": "Sabrina Haas"
+      }
+    ]
+  },
+  {
+    "tournament_number": 19,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Yks Kalja"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Ron on the Lex"
+      },
+      {
+        "groupLetter": "A",
+        "team": "1 and a Half Waidler"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Klaasine Haas"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Bierkätzchen"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Biersexköder"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Old Schmatterhand"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die mongolischen Playboys"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      }
+    ]
+  },
+  {
+    "tournament_number": 18,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Peterchen´s Wichsfahrt"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Team Kentsch"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Al im Ständerland"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Old Schmatterhand"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Balkohol"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die mongolischen Playboys"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die Schöne und das Biest"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Klaas Haas"
+      }
+    ]
+  },
+  {
+    "tournament_number": 17,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Balkohol"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Old Schmatterhand"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Die Schöne und das Biest"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Scheidi und der Einöli"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Schwanz der Vampire"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Bangers 089"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Ass Wide Shut"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Auswärtsspiel"
+      }
+    ]
+  },
+  {
+    "tournament_number": 16,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Bangers 089"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Wu-Scha"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Old Schmatterhand"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Auswärtsspiel"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Biersexköder"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Schwänzel und Gretel"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Is ma Sagge"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Balkohol"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Seximon"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die Schöne und das Biest"
+      }
+    ]
+  },
+  {
+    "tournament_number": 15,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Auswärtsspiel"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Wu-Scha"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Team Seximon"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Balkohol"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die mongolischen Playboys und Playmate"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Long Pong Silver"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Ficket Nemo"
+      },
+      {
+        "groupLetter": "B",
+        "team": "AS Koma"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Gays Anatomy"
+      }
+    ]
+  },
+  {
+    "tournament_number": 14,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Die Hodinnen und ihr Sackl"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Dong Dong Ridaz"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Lasse Reinstroemen und Lady McBineBright"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Druckrprss"
+      },
+      {
+        "groupLetter": "B",
+        "team": "90’s trifft Millenium"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Kauf dir n’ Capri"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Long Pong Silver"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Fick und Fotzi im Bumbsbomber nach Bangkok"
+      }
+    ]
+  },
+  {
+    "tournament_number": 13,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Die Krausen Glucken"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Fick und Fotzi im Bumbsbomber nach Bangkok"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Dr. Subba"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Gudee"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Analex und Kackmin"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Die Guuden"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Lasse Reinstroemen und Lady McBineBright"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Aufsteiger Ast"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Kalena"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Der diabolische Dreizack"
+      }
+    ]
+  },
+  {
+    "tournament_number": 12,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Grüna Gatsch"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Da Schröder hockt beim Kacken"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Die mongolischen Playboys"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Glitschig in der Klit"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Lasse Reinstroemen und Lady McBineBright"
+      },
+      {
+        "groupLetter": "B",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Dr. Subba"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Wu-Scha"
+      }
+    ]
+  },
+  {
+    "tournament_number": 11,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Dr. Subba"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Glitschig in der Klit"
+      },
+      {
+        "groupLetter": "A",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Vanilla Brownie"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die mongolischen Playboys"
+      },
+      {
+        "groupLetter": "B",
+        "team": "20cm"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Meine Eltern sand Geschwister"
+      }
+    ]
+  },
+  {
+    "tournament_number": 10,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Ok cool."
+      },
+      {
+        "groupLetter": "A",
+        "team": "20cm"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Absteigender Ast"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Team Kentsch"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Auf Tisch 1 spielt"
+      },
+      {
+        "groupLetter": "B",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Dr. Subba"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Die Guuden"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Grüna Gatsch"
+      }
+    ]
+  },
+  {
+    "tournament_number": 9,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "DeepThroat"
+      },
+      {
+        "groupLetter": "A",
+        "team": "InDeinLoch"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Heimspiel"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Absteigender Ast"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Dr. Subba"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Masters of Beerpong"
+      },
+      {
+        "groupLetter": "B",
+        "team": "JP und die Niggaz"
+      },
+      {
+        "groupLetter": "B",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "B",
+        "team": "S und F for Gold"
+      }
+    ]
+  },
+  {
+    "tournament_number": 8,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Wu-Scha"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Vollsuff"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Lekato"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Absteigender Ast"
+      },
+      {
+        "groupLetter": "A",
+        "team": "schlenzender Mongo"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Heimspiel"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Dr. Subba"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Masters of Beerpong"
+      },
+      {
+        "groupLetter": "B",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team Kentsch"
+      }
+    ]
+  },
+  {
+    "tournament_number": 7,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Minikin goes Wild"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Heimspiel"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Die Niggaz"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Sören Kierkegaard"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Team KK"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Dr. Subba"
+      },
+      {
+        "groupLetter": "B",
+        "team": "K+K"
+      }
+    ]
+  },
+  {
+    "tournament_number": 6,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Beerpong Bavaria"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Ron on the Kat"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Two and a Half Waidler"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Wu-Scha"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Grünchen"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Heimspiel"
+      },
+      {
+        "groupLetter": "B",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "B",
+        "team": "K+K"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Ka+Ka"
+      },
+      {
+        "groupLetter": "B",
+        "team": "AS Koma"
+      }
+    ]
+  },
+  {
+    "tournament_number": 5,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Die Niggaz"
+      },
+      {
+        "groupLetter": "A",
+        "team": "SV Hoizoam"
+      },
+      {
+        "groupLetter": "A",
+        "team": "C&C"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Beerpong Bavaria"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Waidlers go Wild"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Wet Sophi"
+      },
+      {
+        "groupLetter": "B",
+        "team": "Der Durchschnitt"
+      },
+      {
+        "groupLetter": "B",
+        "team": "AS Koma"
+      }
+    ]
+  },
+  {
+    "tournament_number": 4,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Beerpong Bavaria"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Kevin Grillt"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Kronsch"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Rush on the Lex"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Wet Sophi"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Klaus Peter Christl"
+      }
+    ]
+  },
+  {
+    "tournament_number": 3,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Last Man Standing"
+      },
+      {
+        "groupLetter": "A",
+        "team": "DSDS"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Beerpong Bavaria"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Die Kleinen"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Ron on the Lex"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Kevin Grillt"
+      }
+    ]
+  },
+  {
+    "tournament_number": 2,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "Beerpong Bavaria"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Hugo Queens 2.0"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Weltmacht SA"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Ron on the Kev"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Alaria"
+      }
+    ]
+  },
+  {
+    "tournament_number": 1,
+    "groups": [
+      {
+        "groupLetter": "A",
+        "team": "1 and a Half Waidler"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Alaria"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Ron on the Kev"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Hugo Queens"
+      },
+      {
+        "groupLetter": "A",
+        "team": "(unbekannt)"
+      },
+      {
+        "groupLetter": "A",
+        "team": "Beerpong Bavaria"
+      }
+    ]
+  }
+]

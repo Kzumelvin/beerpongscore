@@ -1,0 +1,23 @@
+[
+  "{\nhome_team: group[0].id!, \naway_team: group[1].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[0], \naway_team: group[1]\n}}",
+  "{\nhome_team: group[0].id!, \naway_team: group[2].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[0], \naway_team: group[2]\n}}",
+  "{\nhome_team: group[0].id!, \naway_team: group[3].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[0], \naway_team: group[3]\n}}",
+  "{\nhome_team: group[0].id!, \naway_team: group[4].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[0], \naway_team: group[4]\n}}",
+  "{\nhome_team: group[0].id!, \naway_team: group[5].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[0], \naway_team: group[5]\n}}",
+  "{\nhome_team: group[0].id!, \naway_team: group[6].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[0], \naway_team: group[6]\n}}",
+  "{\nhome_team: group[1].id!, \naway_team: group[2].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[1], \naway_team: group[2]\n}}",
+  "{\nhome_team: group[1].id!, \naway_team: group[3].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[1], \naway_team: group[3]\n}}",
+  "{\nhome_team: group[1].id!, \naway_team: group[4].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[1], \naway_team: group[4]\n}}",
+  "{\nhome_team: group[1].id!, \naway_team: group[5].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[1], \naway_team: group[5]\n}}",
+  "{\nhome_team: group[1].id!, \naway_team: group[6].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[1], \naway_team: group[6]\n}}",
+  "{\nhome_team: group[2].id!, \naway_team: group[3].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[2], \naway_team: group[3]\n}}",
+  "{\nhome_team: group[2].id!, \naway_team: group[4].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[2], \naway_team: group[4]\n}}",
+  "{\nhome_team: group[2].id!, \naway_team: group[5].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[2], \naway_team: group[5]\n}}",
+  "{\nhome_team: group[2].id!, \naway_team: group[6].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[2], \naway_team: group[6]\n}}",
+  "{\nhome_team: group[3].id!, \naway_team: group[4].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[3], \naway_team: group[4]\n}}",
+  "{\nhome_team: group[3].id!, \naway_team: group[5].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[3], \naway_team: group[5]\n}}",
+  "{\nhome_team: group[3].id!, \naway_team: group[6].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[3], \naway_team: group[6]\n}}",
+  "{\nhome_team: group[4].id!, \naway_team: group[5].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[4], \naway_team: group[5]\n}}",
+  "{\nhome_team: group[4].id!, \naway_team: group[6].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[4], \naway_team: group[6]\n}}",
+  "{\nhome_team: group[5].id!, \naway_team: group[6].id!, \ngame_type: \"Gruppenphase\", \ngroupStage: letter, \ngame_number: 0, \nexpand: { \nhome_team: group[5], \naway_team: group[6]\n}}"
+]
