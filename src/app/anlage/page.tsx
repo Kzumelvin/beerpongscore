@@ -105,9 +105,35 @@ async function page() {
   const csv = generateCsv(csvConfig)(gamesOutput);
   const csvBuffer = new Uint8Array(Buffer.from(asString(csv)));
 
-  //  writeFileSync("./test.txt", JSON.stringify(list, null, 2));
+  function generateMatches(teamCount: number) {
+    const matches: string[] = [];
+
+    for (let i = 0; i < teamCount; i++) {
+      for (let j = i + 1; j <= teamCount; j++) {
+        matches.push(
+          `{
+home_team: group[${i}].id!, 
+away_team: group[${j}].id!, 
+game_type: "Gruppenphase", 
+groupStage: letter, 
+game_number: 0, 
+expand: { 
+home_team: group[${i}], 
+away_team: group[${j}]
+}}`,
+        );
+      }
+    }
+    return matches;
+  }
+
+  // writeFileSync("./output/test.txt", JSON.stringify(list, null, 2));
 
   //  writeFileSync("./output/games.csv", csvBuffer);
+  writeFileSync(
+    "./output/matches.txt",
+    JSON.stringify(generateMatches(6), null, 2),
+  );
   console.log(JSON.stringify(list, null, 2));
   return <div></div>;
 }
