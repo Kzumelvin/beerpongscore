@@ -14,8 +14,10 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
 
   return (
     <div>
-      <Switch id="active" checked={active} onCheckedChange={() => setActive(!active)} />
-      <Label htmlFor='active'>Aktiv / Passiv</Label>
+      <div className='flex gap-3 p-4'>
+        <Switch id="active" checked={active} onCheckedChange={() => setActive(!active)} />
+        <Label htmlFor='active'>Aktiv / Passiv</Label>
+      </div>
       <Table>
         <TableHeader>
           <TableRow>

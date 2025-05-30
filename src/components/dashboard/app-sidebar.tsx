@@ -68,6 +68,12 @@ const data = {
       url: "#",
       icon: IconUsers,
     },
+    {
+      title: "Elo",
+      url: "/elo",
+      icon: IconUsers,
+    },
+
   ],
   navClouds: [
     {
