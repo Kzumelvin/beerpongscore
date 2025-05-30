@@ -1,0 +1,499 @@
+﻿"home_team","away_team","home_cups","away_cups","groupStage","gameType","tournament_number","game_number"
+"1 and a Half Waidler","Alaria",1,0,"A","Gruppenphase",1,1
+"1 and a Half Waidler","Ron on the Kev",1,0,"A","Gruppenphase",1,2
+"Hugo Queens","Alaria",1,0,"A","Gruppenphase",1,3
+"Ron on the Kev","(unbekannt)",1,0,"A","Gruppenphase",1,4
+"1 and a Half Waidler","Hugo Queens",1,0,"A","Gruppenphase",1,5
+"1 and a Half Waidler","(unbekannt)",1,0,"A","Gruppenphase",1,6
+"Beerpong Bavaria","1 and a Half Waidler",1,0,"A","Gruppenphase",1,7
+"Beerpong Bavaria","(unbekannt)",1,0,"A","Gruppenphase",1,8
+"Hugo Queens","(unbekannt)",1,0,"A","Gruppenphase",1,9
+"Ron on the Kev","Alaria",1,0,"A","Gruppenphase",1,10
+"Alaria","(unbekannt)",1,0,"A","Gruppenphase",1,11
+"Beerpong Bavaria","Alaria",1,0,"A","Gruppenphase",1,12
+"Ron on the Kev","Hugo Queens",1,0,"A","Gruppenphase",1,13
+"Beerpong Bavaria","Ron on the Kev",1,0,"A","Gruppenphase",1,14
+"Beerpong Bavaria","Hugo Queens",1,0,"A","Gruppenphase",1,15
+"Beerpong Bavaria","Hugo Queens 2.0",1,0,"A","Gruppenphase",2,16
+"Beerpong Bavaria","Weltmacht SA",1,0,"A","Gruppenphase",2,17
+"Ron on the Kev","Weltmacht SA",1,0,"A","Gruppenphase",2,18
+"Ron on the Kev","Hugo Queens 2.0",1,0,"A","Gruppenphase",2,19
+"Ron on the Kev","Alaria",1,0,"A","Gruppenphase",2,20
+"Weltmacht SA","Hugo Queens 2.0",1,0,"A","Gruppenphase",2,21
+"Beerpong Bavaria","Alaria",1,0,"A","Gruppenphase",2,22
+"Beerpong Bavaria","Ron on the Kev",1,0,"A","Gruppenphase",2,23
+"Weltmacht SA","Alaria",1,0,"A","Gruppenphase",2,24
+"Hugo Queens 2.0","Alaria",1,0,"A","Gruppenphase",2,25
+"Last Man Standing","DSDS",1,0,"A","Gruppenphase",3,26
+"Beerpong Bavaria","DSDS",1,0,"A","Gruppenphase",3,27
+"Beerpong Bavaria","Die Kleinen",1,0,"A","Gruppenphase",3,28
+"Beerpong Bavaria","Ron on the Lex",1,0,"A","Gruppenphase",3,29
+"Kevin Grillt","Ron on the Lex",1,0,"A","Gruppenphase",3,30
+"Kevin Grillt","Die Kleinen",1,0,"A","Gruppenphase",3,31
+"Last Man Standing","Kevin Grillt",1,0,"A","Gruppenphase",3,32
+"Last Man Standing","Die Kleinen",1,0,"A","Gruppenphase",3,33
+"Die Kleinen","Ron on the Lex",1,0,"A","Gruppenphase",3,34
+"Beerpong Bavaria","Last Man Standing",1,0,"A","Gruppenphase",3,35
+"Last Man Standing","Ron on the Lex",1,0,"A","Gruppenphase",3,36
+"Beerpong Bavaria","Kevin Grillt",1,0,"A","Gruppenphase",3,37
+"Beerpong Bavaria","Kevin Grillt",2,0,"A","Gruppenphase",4,38
+"Beerpong Bavaria","Kronsch",0,1,"A","Gruppenphase",4,39
+"Rush on the Lex","Wet Sophi",0,2,"A","Gruppenphase",4,40
+"Beerpong Bavaria","Wet Sophi",2,0,"A","Gruppenphase",4,41
+"Klaus Peter Christl","Rush on the Lex",1,0,"A","Gruppenphase",4,42
+"Rush on the Lex","Kronsch",1,0,"A","Gruppenphase",4,43
+"Wet Sophi","Kevin Grillt",0,2,"A","Gruppenphase",4,44
+"Kronsch","Klaus Peter Christl",1,0,"A","Gruppenphase",4,45
+"Kronsch","Kevin Grillt",2,0,"A","Gruppenphase",4,46
+"Kevin Grillt","Rush on the Lex",0,2,"A","Gruppenphase",4,47
+"Klaus Peter Christl","Beerpong Bavaria",0,4,"A","Gruppenphase",4,48
+"Kevin Grillt","Klaus Peter Christl",3,0,"A","Gruppenphase",4,49
+"Rush on the Lex","Beerpong Bavaria",0,1,"A","Gruppenphase",4,50
+"Wet Sophi","Klaus Peter Christl",6,0,"A","Gruppenphase",4,51
+"Wet Sophi","Kronsch",5,0,"A","Gruppenphase",4,52
+"Waidlers go Wild","Wet Sophi",0,2,"B","Gruppenphase",5,53
+"Die Niggaz","SV Hoizoam",0,2,"A","Gruppenphase",5,54
+"Die Niggaz","C&C",0,3,"A","Gruppenphase",5,55
+"Der Durchschnitt","Waidlers go Wild",0,3,"B","Gruppenphase",5,56
+"Beerpong Bavaria","Die Niggaz",1,0,"A","Gruppenphase",5,57
+"C&C","SV Hoizoam",2,0,"A","Gruppenphase",5,58
+"Waidlers go Wild","AS Koma",0,2,"B","Gruppenphase",5,59
+"AS Koma","Der Durchschnitt",4,0,"B","Gruppenphase",5,60
+"Der Durchschnitt","Wet Sophi",0,4,"B","Gruppenphase",5,61
+"SV Hoizoam","Beerpong Bavaria",1,0,"A","Gruppenphase",5,62
+"C&C","Beerpong Bavaria",0,1,"A","Gruppenphase",5,63
+"Wet Sophi","AS Koma",0,1,"B","Gruppenphase",5,64
+"SV Hoizoam","AS Koma",0,2,"KO","Halbfinale",5,65
+"C&C","Wet Sophi",0,1,"KO","Halbfinale",5,66
+"C&C","SV Hoizoam",1,0,"KO","Spiel um Platz 3",5,67
+"Wet Sophi","AS Koma",0,2,"KO","Finale",5,68
+"Heimspiel","C&C",2,4,"B","Gruppenphase",6,69
+"Beerpong Bavaria","Ron on the Kat",1,0,"A","Gruppenphase",6,70
+"Two and a Half Waidler","Wu-Scha",1,0,"A","Gruppenphase",6,71
+"Wu-Scha","Grünchen",0,2,"A","Gruppenphase",6,72
+"Beerpong Bavaria","Two and a Half Waidler",4,0,"A","Gruppenphase",6,73
+"K+K","Heimspiel",0,2,"B","Gruppenphase",6,74
+"Ka+Ka","AS Koma",4,0,"B","Gruppenphase",6,75
+"Ka+Ka","K+K",2,1,"B","Gruppenphase",6,76
+"K+K","C&C",0,2,"B","Gruppenphase",6,77
+"Grünchen","Ron on the Kat",4,0,"A","Gruppenphase",6,78
+"C&C","AS Koma",0,4,"B","Gruppenphase",6,79
+"Two and a Half Waidler","Grünchen",0,1,"A","Gruppenphase",6,80
+"Grünchen","Beerpong Bavaria",1,0,"A","Gruppenphase",6,81
+"Wu-Scha","Beerpong Bavaria",0,3,"A","Gruppenphase",6,82
+"AS Koma","Heimspiel",0,4,"B","Gruppenphase",6,83
+"AS Koma","K+K",2,0,"B","Gruppenphase",6,84
+"Ron on the Kat","Two and a Half Waidler",0,2,"A","Gruppenphase",6,85
+"Ron on the Kat","Wu-Scha",0,1,"A","Gruppenphase",6,86
+"C&C","Ka+Ka",3,0,"B","Gruppenphase",6,87
+"Heimspiel","Ka+Ka",2,0,"B","Gruppenphase",6,88
+"Beerpong Bavaria","C&C",1,0,"KO","Halbfinale",6,89
+"Wu-Scha","Heimspiel",3,5,"KO","Halbfinale",6,90
+"Wu-Scha","C&C",0,1,"KO","Spiel um Platz 3",6,91
+"Beerpong Bavaria","Heimspiel",0,1,"KO","Finale",6,92
+"Sören Kierkegaard","Team KK",1,0,"B","Gruppenphase",7,93
+"C&C","Minikin goes Wild",3,0,"A","Gruppenphase",7,94
+"Dr. Subba","Sören Kierkegaard",2,0,"B","Gruppenphase",7,95
+"C&C","Heimspiel",1,1,"A","Gruppenphase",7,96
+"K+K","Dr. Subba",0,8,"B","Gruppenphase",7,97
+"Minikin goes Wild","Heimspiel",0,1,"A","Gruppenphase",7,98
+"Sören Kierkegaard","K+K",4,0,"B","Gruppenphase",7,99
+"Dr. Subba","Team KK",0,1,"B","Gruppenphase",7,100
+"Die Niggaz","C&C",0,7,"A","Gruppenphase",7,101
+"Heimspiel","Die Niggaz",2,1,"A","Gruppenphase",7,102
+"Team KK","K+K",2,0,"B","Gruppenphase",7,103
+"Minikin goes Wild","Die Niggaz",0,1,"A","Gruppenphase",7,104
+"Heimspiel","Dr. Subba",0,1,"KO","Halbfinale",7,105
+"C&C","Sören Kierkegaard",0,2,"KO","Halbfinale",7,106
+"C&C","Heimspiel",1,2,"KO","Spiel um Platz 3",7,107
+"Sören Kierkegaard","Dr. Subba",0,4,"KO","Finale",7,108
+"Wu-Scha","Vollsuff",2,0,"A","Gruppenphase",8,109
+"Heimspiel","Dr. Subba",2,4,"B","Gruppenphase",8,110
+"Lekato","Absteigender Ast",0,1,"A","Gruppenphase",8,111
+"Vollsuff","Absteigender Ast",0,2,"A","Gruppenphase",8,112
+"Wu-Scha","Lekato",3,1,"A","Gruppenphase",8,113
+"schlenzender Mongo","Wu-Scha",2,1,"A","Gruppenphase",8,114
+"schlenzender Mongo","Lekato",4,4,"A","Gruppenphase",8,115
+"Dr. Subba","Masters of Beerpong",4,0,"B","Gruppenphase",8,116
+"Masters of Beerpong","C&C",0,2,"B","Gruppenphase",8,117
+"Masters of Beerpong","Heimspiel",2,0,"B","Gruppenphase",8,118
+"Lekato","Vollsuff",3,0,"A","Gruppenphase",8,119
+"Absteigender Ast","schlenzender Mongo",0,1,"A","Gruppenphase",8,120
+"Dr. Subba","C&C",3,0,"B","Gruppenphase",8,121
+"C&C","Heimspiel",2,1,"B","Gruppenphase",8,122
+"Vollsuff","schlenzender Mongo",0,1,"A","Gruppenphase",8,123
+"Team Kentsch","Masters of Beerpong",0,2,"B","Gruppenphase",8,124
+"Heimspiel","Team Kentsch",3,0,"B","Gruppenphase",8,125
+"Absteigender Ast","Wu-Scha",2,0,"A","Gruppenphase",8,126
+"C&C","Team Kentsch",1,0,"B","Gruppenphase",8,127
+"Team Kentsch","Dr. Subba",0,2,"B","Gruppenphase",8,128
+"schlenzender Mongo","C&C",1,0,"KO","Halbfinale",8,129
+"Absteigender Ast","Dr. Subba",0,3,"KO","Halbfinale",8,130
+"C&C","Absteigender Ast",1,2,"KO","Spiel um Platz 3",8,131
+"schlenzender Mongo","Dr. Subba",0,1,"KO","Finale",8,132
+"Dr. Subba","Masters of Beerpong",4,0,"B","Gruppenphase",9,133
+"JP und die Niggaz","C&C",0,1,"B","Gruppenphase",9,134
+"Dr. Subba","JP und die Niggaz",3,0,"B","Gruppenphase",9,135
+"C&C","Masters of Beerpong",4,0,"B","Gruppenphase",9,136
+"DeepThroat","InDeinLoch",1,0,"A","Gruppenphase",9,137
+"Dr. Subba","C&C",2,0,"B","Gruppenphase",9,138
+"Heimspiel","Absteigender Ast",0,1,"A","Gruppenphase",9,139
+"Absteigender Ast","InDeinLoch",0,1,"A","Gruppenphase",9,140
+"Heimspiel","InDeinLoch",1,0,"A","Gruppenphase",9,141
+"Dr. Subba","S und F for Gold",3,0,"B","Gruppenphase",9,142
+"Heimspiel","DeepThroat",1,2,"A","Gruppenphase",9,143
+"DeepThroat","Absteigender Ast",1,0,"A","Gruppenphase",9,144
+"C&C","S und F for Gold",3,0,"B","Gruppenphase",9,145
+"S und F for Gold","Masters of Beerpong",0,2,"B","Gruppenphase",9,146
+"JP und die Niggaz","S und F for Gold",1,0,"B","Gruppenphase",9,147
+"JP und die Niggaz","Masters of Beerpong",2,0,"B","Gruppenphase",9,148
+"InDeinLoch","JP und die Niggaz",1,0,"KO","Relegation",9,149
+"DeepThroat","C&C",0,2,"KO","Halbfinale",9,150
+"InDeinLoch","Dr. Subba",6,0,"KO","Halbfinale",9,151
+"DeepThroat","Dr. Subba",1,0,"KO","Spiel um Platz 3",9,152
+"C&C","InDeinLoch",1,0,"KO","Finale",9,153
+"Ok cool.","20cm",1,0,"A","Gruppenphase",10,154
+"Auf Tisch 1 spielt","C&C",6,0,"B","Gruppenphase",10,155
+"Absteigender Ast","20cm",1,0,"A","Gruppenphase",10,156
+"Team Kentsch","Absteigender Ast",2,0,"A","Gruppenphase",10,157
+"C&C","Dr. Subba",1,0,"B","Gruppenphase",10,158
+"Auf Tisch 1 spielt","Die Guuden",0,1,"B","Gruppenphase",10,159
+"Grüna Gatsch","Die Guuden",1,0,"B","Gruppenphase",10,160
+"Auf Tisch 1 spielt","Dr. Subba",0,5,"B","Gruppenphase",10,161
+"Team Kentsch","20cm",0,1,"A","Gruppenphase",10,162
+"Grüna Gatsch","Dr. Subba",0,1,"B","Gruppenphase",10,163
+"Die Guuden","Dr. Subba",0,6,"B","Gruppenphase",10,164
+"Grüna Gatsch","C&C",2,0,"B","Gruppenphase",10,165
+"Grüna Gatsch","Auf Tisch 1 spielt",1,0,"B","Gruppenphase",10,166
+"C&C","Die Guuden",4,0,"B","Gruppenphase",10,167
+"Ok cool.","Absteigender Ast",1,0,"A","Gruppenphase",10,168
+"Team Kentsch","Ok cool.",1,0,"A","Gruppenphase",10,169
+"Ok cool.","C&C",1,0,"KO","Relegation",10,170
+"Ok cool.","Dr. Subba",0,6,"KO","Halbfinale",10,171
+"Team Kentsch","Grüna Gatsch",2,0,"KO","Halbfinale",10,172
+"Ok cool.","Grüna Gatsch",1,0,"KO","Spiel um Platz 3",10,173
+"Team Kentsch","Dr. Subba",0,2,"KO","Finale",10,174
+"Die mongolischen Playboys","20cm",2,0,"B","Gruppenphase",11,175
+"Dr. Subba","Glitschig in der Klit",0,4,"A","Gruppenphase",11,176
+"Team Kentsch","Die mongolischen Playboys",0,4,"B","Gruppenphase",11,177
+"Glitschig in der Klit","C&C",0,2,"A","Gruppenphase",11,178
+"Glitschig in der Klit","Vanilla Brownie",2,0,"A","Gruppenphase",11,179
+"20cm","Team Kentsch",3,0,"B","Gruppenphase",11,180
+"C&C","Dr. Subba",0,2,"A","Gruppenphase",11,181
+"Die mongolischen Playboys","Meine Eltern sand Geschwister",0,1,"B","Gruppenphase",11,182
+"Vanilla Brownie","C&C",0,1,"A","Gruppenphase",11,183
+"Meine Eltern sand Geschwister","20cm",0,1,"B","Gruppenphase",11,184
+"Team Kentsch","Meine Eltern sand Geschwister",0,3,"B","Gruppenphase",11,185
+"Dr. Subba","Vanilla Brownie",3,0,"A","Gruppenphase",11,186
+"C&C","Die mongolischen Playboys",0,3,"KO","Halbfinale",11,187
+"Glitschig in der Klit","Meine Eltern sand Geschwister",0,2,"KO","Halbfinale",11,188
+"Glitschig in der Klit","C&C",0,1,"KO","Spiel um Platz 3",11,189
+"Meine Eltern sand Geschwister","Die mongolischen Playboys",0,2,"KO","Finale",11,190
+"Lasse Reinstroemen und Lady McBineBright","C&C",0,2,"B","Gruppenphase",12,191
+"Grüna Gatsch","Da Schröder hockt beim Kacken",3,0,"A","Gruppenphase",12,192
+"Lasse Reinstroemen und Lady McBineBright","Dr. Subba",2,1,"B","Gruppenphase",12,193
+"Team Kentsch","Dr. Subba",0,1,"B","Gruppenphase",12,194
+"Grüna Gatsch","Die mongolischen Playboys",0,2,"A","Gruppenphase",12,195
+"Die mongolischen Playboys","Da Schröder hockt beim Kacken",2,0,"A","Gruppenphase",12,196
+"Dr. Subba","C&C",2,0,"B","Gruppenphase",12,197
+"Glitschig in der Klit","Da Schröder hockt beim Kacken",0,1,"A","Gruppenphase",12,198
+"Wu-Scha","C&C",3,0,"B","Gruppenphase",12,199
+"Team Kentsch","C&C",0,2,"B","Gruppenphase",12,200
+"Lasse Reinstroemen und Lady McBineBright","Wu-Scha",4,0,"B","Gruppenphase",12,201
+"Wu-Scha","Dr. Subba",0,2,"B","Gruppenphase",12,202
+"Glitschig in der Klit","Grüna Gatsch",1,3,"A","Gruppenphase",12,203
+"Team Kentsch","Lasse Reinstroemen und Lady McBineBright",0,2,"B","Gruppenphase",12,204
+"Glitschig in der Klit","Die mongolischen Playboys",0,2,"A","Gruppenphase",12,205
+"Team Kentsch","Wu-Scha",3,0,"B","Gruppenphase",12,206
+"Wu-Scha","Glitschig in der Klit",0,1,"KO","Relegation",12,207
+"Dr. Subba","Da Schröder hockt beim Kacken",2,0,"KO","Viertelfinale",12,208
+"Grüna Gatsch","C&C",1,5,"KO","Viertelfinale",12,209
+"Lasse Reinstroemen und Lady McBineBright","Team Kentsch",3,0,"KO","Viertelfinale",12,210
+"Die mongolischen Playboys","Glitschig in der Klit",2,0,"KO","Viertelfinale",12,211
+"Die mongolischen Playboys","C&C",2,0,"KO","Halbfinale",12,212
+"Lasse Reinstroemen und Lady McBineBright","Dr. Subba",1,0,"KO","Halbfinale",12,213
+"C&C","Dr. Subba",2,0,"KO","Spiel um Platz 3",12,214
+"Die mongolischen Playboys","Lasse Reinstroemen und Lady McBineBright",0,1,"KO","Finale",12,215
+"Lasse Reinstroemen und Lady McBineBright","Aufsteiger Ast",3,0,"B","Gruppenphase",13,216
+"Team Kentsch","Kalena",3,0,"B","Gruppenphase",13,217
+"Die Krausen Glucken","Fick und Fotzi im Bumbsbomber nach Bangkok",0,2,"A","Gruppenphase",13,218
+"Die Krausen Glucken","Dr. Subba",0,4,"A","Gruppenphase",13,219
+"Gudee","Dr. Subba",0,6,"A","Gruppenphase",13,220
+"Analex und Kackmin","Gudee",0,3,"A","Gruppenphase",13,221
+"Fick und Fotzi im Bumbsbomber nach Bangkok","Die Guuden",1,0,"A","Gruppenphase",13,222
+"Analex und Kackmin","Dr. Subba",0,5,"A","Gruppenphase",13,223
+"Lasse Reinstroemen und Lady McBineBright","Der diabolische Dreizack",0,1,"B","Gruppenphase",13,224
+"Aufsteiger Ast","Team Kentsch",2,0,"B","Gruppenphase",13,225
+"Gudee","Die Krausen Glucken",2,0,"A","Gruppenphase",13,226
+"Kalena","Der diabolische Dreizack",0,7,"B","Gruppenphase",13,227
+"Analex und Kackmin","Die Krausen Glucken",1,0,"A","Gruppenphase",13,228
+"Dr. Subba","Fick und Fotzi im Bumbsbomber nach Bangkok",2,0,"A","Gruppenphase",13,229
+"Kalena","Lasse Reinstroemen und Lady McBineBright",1,4,"B","Gruppenphase",13,230
+"Lasse Reinstroemen und Lady McBineBright","Team Kentsch",1,0,"B","Gruppenphase",13,231
+"Der diabolische Dreizack","Aufsteiger Ast",3,0,"B","Gruppenphase",13,232
+"Aufsteiger Ast","Kalena",6,0,"B","Gruppenphase",13,233
+"Der diabolische Dreizack","Team Kentsch",3,0,"B","Gruppenphase",13,234
+"Fick und Fotzi im Bumbsbomber nach Bangkok","Analex und Kackmin",0,2,"A","Gruppenphase",13,235
+"Fick und Fotzi im Bumbsbomber nach Bangkok","Gudee",0,1,"KO","Viertelfinale",13,236
+"Dr. Subba","Analex und Kackmin",5,0,"KO","Viertelfinale",13,237
+"Lasse Reinstroemen und Lady McBineBright","Aufsteiger Ast",3,0,"KO","Viertelfinale",13,238
+"Der diabolische Dreizack","Team Kentsch",0,2,"KO","Viertelfinale",13,239
+"Lasse Reinstroemen und Lady McBineBright","Gudee",6,0,"KO","Halbfinale",13,240
+"Dr. Subba","Team Kentsch",2,0,"KO","Halbfinale",13,241
+"Gudee","Team Kentsch",0,1,"KO","Spiel um Platz 3",13,242
+"Dr. Subba","Lasse Reinstroemen und Lady McBineBright",0,7,"KO","Finale",13,243
+"Die Hodinnen und ihr Sackl","Dong Dong Ridaz",0,4,"A","Gruppenphase",14,244
+"Die Hodinnen und ihr Sackl","Lasse Reinstroemen und Lady McBineBright",1,3,"A","Gruppenphase",14,245
+"90’s trifft Millenium","Kauf dir n’ Capri",2,0,"B","Gruppenphase",14,246
+"Lasse Reinstroemen und Lady McBineBright","Dong Dong Ridaz",5,0,"A","Gruppenphase",14,247
+"Long Pong Silver","Kauf dir n’ Capri",5,0,"B","Gruppenphase",14,248
+"Druckrprss","Die Hodinnen und ihr Sackl",0,8,"A","Gruppenphase",14,249
+"90’s trifft Millenium","Team Kentsch",0,2,"B","Gruppenphase",14,250
+"Team Kentsch","Kauf dir n’ Capri",1,1,"B","Gruppenphase",14,251
+"Druckrprss","Dong Dong Ridaz",1,3,"A","Gruppenphase",14,252
+"Long Pong Silver","Fick und Fotzi im Bumbsbomber nach Bangkok",1,0,"B","Gruppenphase",14,253
+"Druckrprss","Lasse Reinstroemen und Lady McBineBright",7,0,"A","Gruppenphase",14,254
+"90’s trifft Millenium","Long Pong Silver",2,0,"B","Gruppenphase",14,255
+"90’s trifft Millenium","Fick und Fotzi im Bumbsbomber nach Bangkok",1,0,"B","Gruppenphase",14,256
+"Long Pong Silver","Team Kentsch",2,0,"B","Gruppenphase",14,257
+"Team Kentsch","Fick und Fotzi im Bumbsbomber nach Bangkok",3,0,"B","Gruppenphase",14,258
+"Fick und Fotzi im Bumbsbomber nach Bangkok","Kauf dir n’ Capri",1,0,"B","Gruppenphase",14,259
+"Fick und Fotzi im Bumbsbomber nach Bangkok","Kauf dir n’ Capri",5,0,"KO","Relegation",14,260
+"Lasse Reinstroemen und Lady McBineBright","Team Kentsch",0,1,"KO","Viertelfinale",14,261
+"Long Pong Silver","Fick und Fotzi im Bumbsbomber nach Bangkok",2,0,"KO","Viertelfinale",14,262
+"90’s trifft Millenium","Druckrprss",0,2,"KO","Viertelfinale",14,263
+"Dong Dong Ridaz","Die Hodinnen und ihr Sackl",2,1,"KO","Viertelfinale",14,264
+"Dong Dong Ridaz","Team Kentsch",0,1,"KO","Halbfinale",14,265
+"Long Pong Silver","Druckrprss",2,0,"KO","Halbfinale",14,266
+"Druckrprss","Dong Dong Ridaz",1,3,"KO","Spiel um Platz 3",14,267
+"Long Pong Silver","Team Kentsch",1,0,"KO","Finale",14,268
+"Die mongolischen Playboys und Playmate","Long Pong Silver",4,0,"B","Gruppenphase",15,269
+"Die mongolischen Playboys und Playmate","Ficket Nemo",2,0,"B","Gruppenphase",15,270
+"AS Koma","Ficket Nemo",1,0,"B","Gruppenphase",15,271
+"Gays Anatomy","AS Koma",0,2,"B","Gruppenphase",15,272
+"Auswärtsspiel","Wu-Scha",1,1,"A","Gruppenphase",15,273
+"Gays Anatomy","Ficket Nemo",0,1,"B","Gruppenphase",15,274
+"Wu-Scha","Team Seximon",2,1,"A","Gruppenphase",15,275
+"Die mongolischen Playboys und Playmate","AS Koma",2,0,"B","Gruppenphase",15,276
+"Team Seximon","Auswärtsspiel",4,5,"A","Gruppenphase",15,277
+"Balkohol","Team Seximon",4,0,"A","Gruppenphase",15,278
+"Die mongolischen Playboys und Playmate","Gays Anatomy",0,1,"B","Gruppenphase",15,279
+"Balkohol","Auswärtsspiel",5,0,"A","Gruppenphase",15,280
+"Long Pong Silver","AS Koma",3,0,"B","Gruppenphase",15,281
+"Gays Anatomy","Long Pong Silver",2,0,"B","Gruppenphase",15,282
+"Long Pong Silver","Ficket Nemo",2,0,"B","Gruppenphase",15,283
+"Wu-Scha","Balkohol",2,0,"A","Gruppenphase",15,284
+"Ficket Nemo","Team Seximon",0,3,"KO","Relegation",15,285
+"Gays Anatomy","Long Pong Silver",1,0,"KO","Viertelfinale",15,286
+"Wu-Scha","Team Seximon",2,1,"KO","Viertelfinale",15,287
+"Balkohol","AS Koma",2,0,"KO","Viertelfinale",15,288
+"Die mongolischen Playboys und Playmate","Auswärtsspiel",0,1,"KO","Viertelfinale",15,289
+"Wu-Scha","Auswärtsspiel",1,2,"KO","Halbfinale",15,290
+"Balkohol","Gays Anatomy",0,1,"KO","Halbfinale",15,291
+"Wu-Scha","Balkohol",0,1,"KO","Spiel um Platz 3",15,292
+"Auswärtsspiel","Gays Anatomy",0,2,"KO","Finale",15,293
+"Schwänzel und Gretel","Is ma Sagge",3,0,"B","Gruppenphase",16,294
+"Is ma Sagge","Balkohol",3,0,"B","Gruppenphase",16,295
+"Bangers 089","Wu-Scha",2,0,"A","Gruppenphase",16,296
+"Bangers 089","Old Schmatterhand",0,1,"A","Gruppenphase",16,297
+"Wu-Scha","Old Schmatterhand",0,2,"A","Gruppenphase",16,298
+"Is ma Sagge","Team Seximon",0,1,"B","Gruppenphase",16,299
+"Old Schmatterhand","Auswärtsspiel",3,0,"A","Gruppenphase",16,300
+"Die Schöne und das Biest","Balkohol",2,0,"B","Gruppenphase",16,301
+"Team Seximon","Die Schöne und das Biest",1,1,"B","Gruppenphase",16,302
+"Bangers 089","Biersexköder",1,0,"A","Gruppenphase",16,303
+"Old Schmatterhand","Biersexköder",3,0,"A","Gruppenphase",16,304
+"Auswärtsspiel","Wu-Scha",3,2,"A","Gruppenphase",16,305
+"Schwänzel und Gretel","Balkohol",2,0,"B","Gruppenphase",16,306
+"Biersexköder","Auswärtsspiel",4,0,"A","Gruppenphase",16,307
+"Auswärtsspiel","Bangers 089",0,7,"A","Gruppenphase",16,308
+"Balkohol","Team Seximon",2,0,"B","Gruppenphase",16,309
+"Die Schöne und das Biest","Is ma Sagge",0,4,"B","Gruppenphase",16,310
+"Schwänzel und Gretel","Die Schöne und das Biest",0,2,"B","Gruppenphase",16,311
+"Team Seximon","Schwänzel und Gretel",0,1,"B","Gruppenphase",16,312
+"Wu-Scha","Biersexköder",4,5,"A","Gruppenphase",16,313
+"Die Schöne und das Biest","Is ma Sagge",1,0,"KO","Viertelfinale",16,314
+"Old Schmatterhand","Balkohol",0,1,"KO","Viertelfinale",16,315
+"Bangers 089","Team Seximon",3,0,"KO","Viertelfinale",16,316
+"Schwänzel und Gretel","Biersexköder",0,2,"KO","Viertelfinale",16,317
+"Bangers 089","Balkohol",3,0,"KO","Halbfinale",16,318
+"Die Schöne und das Biest","Biersexköder",0,2,"KO","Halbfinale",16,319
+"Die Schöne und das Biest","Balkohol",0,1,"KO","Spiel um Platz 3",16,320
+"Bangers 089","Biersexköder",5,0,"KO","Finale",16,321
+"Schwanz der Vampire","Bangers 089",0,2,"B","Gruppenphase",17,322
+"Balkohol","Old Schmatterhand",0,2,"A","Gruppenphase",17,323
+"Ass Wide Shut","Schwanz der Vampire",2,0,"B","Gruppenphase",17,324
+"Balkohol","Die Schöne und das Biest",1,0,"A","Gruppenphase",17,325
+"Team Kentsch","Bangers 089",0,1,"B","Gruppenphase",17,326
+"Old Schmatterhand","Die Schöne und das Biest",5,0,"A","Gruppenphase",17,327
+"Scheidi und der Einöli","Old Schmatterhand",3,0,"A","Gruppenphase",17,328
+"Balkohol","Scheidi und der Einöli",0,1,"A","Gruppenphase",17,329
+"Auswärtsspiel","Bangers 089",0,6,"B","Gruppenphase",17,330
+"Scheidi und der Einöli","Die Schöne und das Biest",0,2,"A","Gruppenphase",17,331
+"Team Kentsch","Schwanz der Vampire",0,2,"B","Gruppenphase",17,332
+"Schwanz der Vampire","Auswärtsspiel",6,0,"B","Gruppenphase",17,333
+"Ass Wide Shut","Bangers 089",0,3,"B","Gruppenphase",17,334
+"Team Kentsch","Auswärtsspiel",3,0,"B","Gruppenphase",17,335
+"Team Kentsch","Ass Wide Shut",1,0,"B","Gruppenphase",17,336
+"Ass Wide Shut","Auswärtsspiel",2,4,"B","Gruppenphase",17,337
+"Ass Wide Shut","Auswärtsspiel",0,1,"KO","Relegation",17,338
+"Scheidi und der Einöli","Balkohol",0,2,"KO","Viertelfinale",17,339
+"Old Schmatterhand","Die Schöne und das Biest",5,0,"KO","Viertelfinale",17,340
+"Bangers 089","Auswärtsspiel",3,0,"KO","Viertelfinale",17,341
+"Schwanz der Vampire","Team Kentsch",0,3,"KO","Viertelfinale",17,342
+"Bangers 089","Balkohol",3,0,"KO","Halbfinale",17,343
+"Old Schmatterhand","Team Kentsch",1,0,"KO","Halbfinale",17,344
+"Balkohol","Team Kentsch",0,1,"KO","Spiel um Platz 3",17,345
+"Bangers 089","Old Schmatterhand",0,3,"KO","Finale",17,346
+"Peterchen´s Wichsfahrt","Team Kentsch",0,5,"A","Gruppenphase",18,347
+"Al im Ständerland","Old Schmatterhand",1,0,"A","Gruppenphase",18,348
+"Balkohol","Die mongolischen Playboys",3,0,"B","Gruppenphase",18,349
+"Die Schöne und das Biest","Klaas Haas",2,0,"B","Gruppenphase",18,350
+"Peterchen´s Wichsfahrt","Al im Ständerland",0,2,"A","Gruppenphase",18,351
+"Team Kentsch","Old Schmatterhand",3,0,"A","Gruppenphase",18,352
+"Balkohol","Die Schöne und das Biest",1,4,"B","Gruppenphase",18,353
+"Die mongolischen Playboys","Klaas Haas",4,0,"B","Gruppenphase",18,354
+"Team Kentsch","Al im Ständerland",0,2,"A","Gruppenphase",18,355
+"Old Schmatterhand","Peterchen´s Wichsfahrt",0,2,"A","Gruppenphase",18,356
+"Die mongolischen Playboys","Die Schöne und das Biest",1,0,"B","Gruppenphase",18,357
+"Klaas Haas","Balkohol",0,2,"B","Gruppenphase",18,358
+"Al im Ständerland","Klaas Haas",2,0,"KO","Viertelfinale",18,359
+"Team Kentsch","Old Schmatterhand",1,0,"KO","Viertelfinale",18,360
+"Die Schöne und das Biest","Peterchen´s Wichsfahrt",0,3,"KO","Viertelfinale",18,361
+"Balkohol","Die mongolischen Playboys",0,5,"KO","Viertelfinale",18,362
+"Al im Ständerland","Peterchen´s Wichsfahrt",2,0,"KO","Halbfinale",18,363
+"Team Kentsch","Die mongolischen Playboys",0,1,"KO","Halbfinale",18,364
+"Peterchen´s Wichsfahrt","Team Kentsch",0,1,"KO","Spiel um Platz 3",18,365
+"Al im Ständerland","Die mongolischen Playboys",0,1,"KO","Finale",18,366
+"Bierkätzchen","Biersexköder",1,0,"B","Gruppenphase",19,367
+"Old Schmatterhand","Die mongolischen Playboys",0,2,"B","Gruppenphase",19,368
+"Yks Kalja","Ron on the Lex",3,0,"A","Gruppenphase",19,369
+"1 and a Half Waidler","Klaasine Haas",6,0,"A","Gruppenphase",19,370
+"Biersexköder","Old Schmatterhand",2,0,"B","Gruppenphase",19,371
+"Bierkätzchen","Team Kentsch",0,2,"B","Gruppenphase",19,372
+"Die mongolischen Playboys","Team Kentsch",0,1,"B","Gruppenphase",19,373
+"Bierkätzchen","Old Schmatterhand",2,0,"B","Gruppenphase",19,374
+"Yks Kalja","1 and a Half Waidler",0,2,"A","Gruppenphase",19,375
+"Ron on the Lex","Klaasine Haas",1,1,"A","Gruppenphase",19,376
+"Biersexköder","Die mongolischen Playboys",0,2,"B","Gruppenphase",19,377
+"Old Schmatterhand","Team Kentsch",2,0,"B","Gruppenphase",19,378
+"Yks Kalja","Klaasine Haas",1,2,"A","Gruppenphase",19,379
+"Ron on the Lex","1 and a Half Waidler",2,0,"A","Gruppenphase",19,380
+"Bierkätzchen","Die mongolischen Playboys",0,5,"B","Gruppenphase",19,381
+"Biersexköder","Team Kentsch",0,1,"B","Gruppenphase",19,382
+"Biersexköder","Old Schmatterhand",4,0,"KO","Relegation",19,383
+"Die mongolischen Playboys","Biersexköder",1,0,"KO","Viertelfinale",19,384
+"Team Kentsch","Yks Kalja",0,2,"KO","Viertelfinale",19,385
+"1 and a Half Waidler","Klaasine Haas",4,1,"KO","Viertelfinale",19,386
+"Bierkätzchen","Ron on the Lex",0,1,"KO","Viertelfinale",19,387
+"Die mongolischen Playboys","Yks Kalja",0,1,"KO","Halbfinale",19,388
+"1 and a Half Waidler","Ron on the Lex",2,0,"KO","Halbfinale",19,389
+"Die mongolischen Playboys","Ron on the Lex",1,2,"KO","Spiel um Platz 3",19,390
+"Yks Kalja","1 and a Half Waidler",0,1,"KO","Finale",19,391
+"Sophia Kentsch","Andreas Grill",0,2,"A","Gruppenphase",20,392
+"Moritz Fedeneder","Alexandra Ziegler",3,0,"B","Gruppenphase",20,393
+"Christian Balk","Daniel Schröder",0,1,"C","Gruppenphase",20,394
+"Franziska Kentsch","Fabian Baier",3,0,"D","Gruppenphase",20,395
+"Simon Schnitzer","Niko Holopainen",6,0,"E","Gruppenphase",20,396
+"Kevin Haberl","Katharina Kühnelt",0,1,"A","Gruppenphase",20,397
+"Maria Krysin","Selina Holmer",0,7,"B","Gruppenphase",20,398
+"Sophia Koch","Simon Haas",3,0,"C","Gruppenphase",20,399
+"Ronja Fischer","Paul Ilmberger",0,4,"D","Gruppenphase",20,400
+"Daniela Balk","Sabrina Haas",2,1,"E","Gruppenphase",20,401
+"Sophia Kentsch","Kevin Haberl",0,2,"A","Gruppenphase",20,402
+"Moritz Fedeneder","Maria Krysin",6,0,"B","Gruppenphase",20,403
+"Christian Balk","Sophia Koch",1,0,"C","Gruppenphase",20,404
+"Franziska Kentsch","Ronja Fischer",0,3,"D","Gruppenphase",20,405
+"Simon Schnitzer","Daniela Balk",0,3,"E","Gruppenphase",20,406
+"Andreas Grill","Katharina Kühnelt",4,0,"A","Gruppenphase",20,407
+"Alexandra Ziegler","Selina Holmer",0,3,"B","Gruppenphase",20,408
+"Daniel Schröder","Simon Haas",2,2,"C","Gruppenphase",20,409
+"Fabian Baier","Paul Ilmberger",0,2,"D","Gruppenphase",20,410
+"Niko Holopainen","Sabrina Haas",0,1,"E","Gruppenphase",20,411
+"Katharina Kühnelt","Sophia Kentsch",3,2,"A","Gruppenphase",20,412
+"Selina Holmer","Moritz Fedeneder",0,4,"B","Gruppenphase",20,413
+"Simon Haas","Christian Balk",0,4,"C","Gruppenphase",20,414
+"Paul Ilmberger","Franziska Kentsch",2,0,"D","Gruppenphase",20,415
+"Sabrina Haas","Simon Schnitzer",0,2,"E","Gruppenphase",20,416
+"Andreas Grill","Kevin Haberl",0,3,"A","Gruppenphase",20,417
+"Alexandra Ziegler","Maria Krysin",2,0,"B","Gruppenphase",20,418
+"Daniel Schröder","Sophia Koch",0,2,"C","Gruppenphase",20,419
+"Fabian Baier","Ronja Fischer",3,0,"D","Gruppenphase",20,420
+"Niko Holopainen","Daniela Balk",0,2,"E","Gruppenphase",20,421
+"Fabian Baier","Maria Krysin",6,0,"KO","Relegation",20,422
+"Sabrina Haas","Niko Holopainen",0,3,"KO","Relegation",20,423
+"Sophia Kentsch","Alexandra Ziegler",0,1,"KO","Relegation",20,424
+"Ronja Fischer","Simon Haas",0,1,"KO","Relegation",20,425
+"Moritz Fedeneder","Niko Holopainen",3,0,"KO","Achtelfinale",20,426
+"Paul Ilmberger","Selina Holmer",0,2,"KO","Achtelfinale",20,427
+"Daniela Balk","Alexandra Ziegler",1,0,"KO","Achtelfinale",20,428
+"Selina Holmer","Fabian Baier",0,1,"KO","Achtelfinale",20,429
+"Simon Schnitzer","Franziska Kentsch",3,0,"KO","Achtelfinale",20,430
+"Kevin Haberl","Daniel Schröder",1,0,"KO","Achtelfinale",20,431
+"Christian Balk","Katharina Kühnelt",6,0,"KO","Achtelfinale",20,432
+"Sophia Koch","Andreas Grill",0,4,"KO","Achtelfinale",20,433
+"Moritz Fedeneder","Simon Haas",0,1,"KO","Viertelfinale",20,434
+"Fabian Baier","Daniela Balk",5,0,"KO","Viertelfinale",20,435
+"Simon Schnitzer","Andreas Grill",0,1,"KO","Viertelfinale",20,436
+"Kevin Haberl","Christian Balk",0,4,"KO","Viertelfinale",20,437
+"Christian Balk","Simon Haas",2,0,"KO","Halbfinale",20,438
+"Andreas Grill","Fabian Baier",0,5,"KO","Halbfinale",20,439
+"Andreas Grill","Simon Haas",1,0,"KO","Spiel um Platz 3",20,440
+"Fabian Baier","Christian Balk",1,0,"KO","Finale",20,441
+"Baban Club - Mampfen und Dampfen","Bierkätzchen",1,0,"A","Gruppenphase",21,442
+"Juventus Urin","Die mongolischen Playboys",0,1,"B","Gruppenphase",21,443
+"Bierkätzchen","Mama erklärt das BPT",2,0,"A","Gruppenphase",21,444
+"Die mongolischen Playboys","Auswärtsspiel",4,0,"B","Gruppenphase",21,445
+"Baban Club - Mampfen und Dampfen","Mama erklärt das BPT",0,1,"A","Gruppenphase",21,446
+"Juventus Urin","Auswärtsspiel",5,0,"B","Gruppenphase",21,447
+"Bierkätzchen","Baban Club - Mampfen und Dampfen",0,4,"A","Gruppenphase",21,448
+"Die mongolischen Playboys","Juventus Urin",0,2,"B","Gruppenphase",21,449
+"Mama erklärt das BPT","Bierkätzchen",0,3,"A","Gruppenphase",21,450
+"Auswärtsspiel","Die mongolischen Playboys",0,3,"B","Gruppenphase",21,451
+"Mama erklärt das BPT","Baban Club - Mampfen und Dampfen",0,2,"A","Gruppenphase",21,452
+"Auswärtsspiel","Juventus Urin",1,1,"B","Gruppenphase",21,453
+"Juventus Urin","Auswärtsspiel",0,1,"KO","Relegation",21,454
+"Bierkätzchen","Mama erklärt das BPT",0,5,"KO","Relegation",21,455
+"Baban Club - Mampfen und Dampfen","Auswärtsspiel",0,1,"KO","Halbfinale",21,456
+"Die mongolischen Playboys","Mama erklärt das BPT",2,0,"KO","Halbfinale",21,457
+"Baban Club - Mampfen und Dampfen","Mama erklärt das BPT",1,0,"KO","Spiel um Platz 3",21,458
+"Die mongolischen Playboys","Auswärtsspiel",3,0,"KO","Finale",21,459
+"Michael Jackson - Before and After","The Invincibles",0,4,"A","Gruppenphase",22,789
+"Schröder Sabrina","Die gefüllte Schnitte und ihr potenter Patissier",1,0,"B","Gruppenphase",22,790
+"Baban Club - Mampfen und Dampfen","Veni, Vidi, Einlochi",3,0,"A","Gruppenphase",22,791
+"Selimon","Team Kentsch",0,1,"B","Gruppenphase",22,792
+"Michael Jackson - Before and After","Baban Club - Mampfen und Dampfen",0,1,"A","Gruppenphase",22,793
+"Schröder Sabrina","Selimon",3,1,"B","Gruppenphase",22,794
+"The Invincibles","Veni, Vidi, Einlochi",2,1,"A","Gruppenphase",22,795
+"Die gefüllte Schnitte und ihr potenter Patissier","Team Kentsch",2,0,"B","Gruppenphase",22,796
+"The Invincibles","Baban Club - Mampfen und Dampfen",2,0,"A","Gruppenphase",22,797
+"Die gefüllte Schnitte und ihr potenter Patissier","Selimon",0,1,"B","Gruppenphase",22,798
+"Veni, Vidi, Einlochi","Michael Jackson - Before and After",2,1,"A","Gruppenphase",22,799
+"Team Kentsch","Schröder Sabrina",0,1,"B","Gruppenphase",22,800
+"The Invincibles","Michael Jackson - Before and After",2,0,"KO","Viertelfinale",22,801
+"Schröder Sabrina","Veni, Vidi, Einlochi",5,0,"KO","Viertelfinale",22,802
+"Baban Club - Mampfen und Dampfen","Team Kentsch",2,0,"KO","Viertelfinale",22,803
+"Die gefüllte Schnitte und ihr potenter Patissier","Selimon",3,0,"KO","Viertelfinale",22,804
+"The Invincibles","Die gefüllte Schnitte und ihr potenter Patissier",0,2,"KO","Halbfinale",22,805
+"Schröder Sabrina","Baban Club - Mampfen und Dampfen",1,0,"KO","Halbfinale",22,806
+"The Invincibles","Baban Club - Mampfen und Dampfen",0,1,"KO","Spiel um Platz 3",22,807
+"Schröder Sabrina","Die gefüllte Schnitte und ihr potenter Patissier",0,1,"KO","Finale",22,808
+"Team Kentsch II","Auswärtsspiel",5,0,"A","Gruppenphase",23,1
+"Die mongolischen Playboys","Benjamin Bierchen",3,0,"B","Gruppenphase",23,2
+"Die Hopfenqueens","1 and a Half Waidler",0,1,"A","Gruppenphase",23,3
+"Benjamin Bierchen","Die gefüllte Schnitte und ihr potenter Patissier",4,0,"B","Gruppenphase",23,4
+"Team Kentsch II","Die Hopfenqueens",0,1,"A","Gruppenphase",23,5
+"Die mongolischen Playboys","Die gefüllte Schnitte und ihr potenter Patissier",1,0,"B","Gruppenphase",23,6
+"Auswärtsspiel","1 and a Half Waidler",3,5,"A","Gruppenphase",23,7
+"Benjamin Bierchen","Die mongolischen Playboys",6,0,"B","Gruppenphase",23,8
+"1 and a Half Waidler","Team Kentsch II",0,5,"A","Gruppenphase",23,9
+"Die gefüllte Schnitte und ihr potenter Patissier","Benjamin Bierchen",0,2,"B","Gruppenphase",23,10
+"Auswärtsspiel","Die Hopfenqueens",1,0,"A","Gruppenphase",23,11
+"Die gefüllte Schnitte und ihr potenter Patissier","Die mongolischen Playboys",0,5,"B","Gruppenphase",23,12
+"Die mongolischen Playboys","Die gefüllte Schnitte und ihr potenter Patissier",1,0,"KO","Relegation",23,13
+"Team Kentsch II","Auswärtsspiel",2,0,"KO","Relegation",23,14
+"1 and a Half Waidler","Die Hopfenqueens",2,0,"KO","Relegation",23,15
+"Benjamin Bierchen","1 and a Half Waidler",4,0,"KO","Halbfinale",23,16
+"Die mongolischen Playboys","Team Kentsch II",0,1,"KO","Halbfinale",23,17
+"Die mongolischen Playboys","1 and a Half Waidler",2,1,"KO","Spiel um Platz 3",23,18
+"Benjamin Bierchen","Team Kentsch II",1,0,"KO","Finale",23,19
