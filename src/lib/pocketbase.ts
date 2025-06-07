@@ -24,6 +24,7 @@ export type playerType = {
   active: boolean,
   picture_url: string,
   bio: string,
+  elolist: string,
   expand?: any
 }
 

@@ -1,15 +1,19 @@
-import { eloBerechnung } from '@/lib/elo'
+"use client"
+import { eloBerechnung, eloListType } from '@/lib/elo'
 import { gameType, playerType, turnierType } from '@/lib/pocketbase'
 import React from 'react'
 import EloTable from './EloTable'
+import { Button } from '@/components/ui/button'
+import { updateElo } from '@/lib/actions'
+import { toast } from 'sonner'
 
-function EloDashboard({ spieler, games, turniere }: { spieler: playerType[], games: gameType[], turniere: turnierType[] }) {
+function EloDashboard({ spieler, games, turniere, elolist }: { spieler: playerType[], games: gameType[], turniere: turnierType[], elolist: eloListType[] }) {
 
-  let eloList = eloBerechnung(spieler, games, turniere)
 
   return (
     <div>
-      <EloTable turniere={turniere} eloList={eloList} />
+      <Button onClick={() => { updateElo(elolist).then(e => toast.success("Update durchgeführt", { description: `${e}` })) }}>Update Elo</Button>
+      <EloTable turniere={turniere} eloList={elolist} />
     </div>
   )
 }

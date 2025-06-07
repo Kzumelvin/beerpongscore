@@ -10,7 +10,8 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
 
   const [active, setActive] = useState(true)
 
-  console.log(eloList)
+  // console.dir(eloList, { depth: 3 })
+
 
   return (
     <div>
@@ -22,6 +23,9 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
         <TableHeader>
           <TableRow>
             <TableHead>Spielername</TableHead>
+            <TableHead>Akt. NA</TableHead>
+            <TableHead>Gesamt NA</TableHead>
+            <TableHead>Verlorene Elo</TableHead>
             {turniere.sort((a, b) => b.tournament_number - a.tournament_number).map(p => (
               <TableHead key={p.tournament_number}>{p.tournament_name}</TableHead>
             ))}
@@ -30,9 +34,12 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
         <TableBody>
           {eloList.sort((a, b) => b.elo.at(-1)!.values.at(-1)! - a.elo.at(-1)!.values.at(-1)!).filter(f => f.player.active == active).map(p => (
             <TableRow key={p.player.player_name}>
-              <TableCell>{p.player.player_name}</TableCell>
+              <TableCell>{p.player.player_name} {p.offTurs}</TableCell>
+              <TableCell>{p.offTurs}</TableCell>
+              <TableCell>{p.offTursSum ? p.offTursSum : 0}</TableCell>
+              <TableCell>{p.offSum ? p.offSum : 0}</TableCell>
               {p.elo.sort((a, b) => b.turniernummer - a.turniernummer).map(e => (
-                <TableCell key={e.turniernummer}>{e.values.at(-1)}</TableCell>
+                <TableCell key={e.turniernummer}><span className='font-bold'>{e.values.at(-1)}</span> | ({e.offset} / -{e.offsetSum}) | {e.rangliste} | {e.ranglisteDiff > 0 ? `+${e.ranglisteDiff}` : e.ranglisteDiff}</TableCell>
               ))}
             </TableRow>
           ))}

@@ -17,9 +17,12 @@ async function page() {
     expand: "groupA, groupB, groupC, groupD, groupE"
   })
 
+
+  let eloList = eloBerechnung(spieler, games, turniere)
+
   return (
     <div>
-      <EloDashboard spieler={spieler} games={games} turniere={turniere} />
+      <EloDashboard spieler={spieler} games={games} turniere={turniere} elolist={eloList} />
     </div>
   )
 }
