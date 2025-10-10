@@ -12,8 +12,12 @@ type Admin = {
 
 export async function middleware(request: NextRequest) {
 
-  const authRes = await auth0.middleware(request);
-
-  return authRes
+  try {
+    return await auth0.middleware(request)
+  } catch {
+    return auth0.startInteractiveLogin({
+      returnTo: request.url,
+    })
+  }
 }
 
