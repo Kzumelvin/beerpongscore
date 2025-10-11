@@ -12,7 +12,7 @@ function EloDashboard({ spieler, games, turniere, elolist }: { spieler: playerTy
 
   return (
     <div>
-      <Button onClick={() => { updateElo(elolist).then(e => toast.success("Update durchgeführt", { description: `${e}` })) }}>Update Elo</Button>
+      <Button onClick={() => { updateElo(elolist).then((e) => toast.success("Update durchgeführt", { description: `${e}` })) }}>Update Elo</Button>
       <EloTable turniere={turniere} eloList={elolist} />
     </div>
   )

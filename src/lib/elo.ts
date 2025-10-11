@@ -12,7 +12,8 @@ type eloType = {
 
 export type eloListType = {
   player: playerType,
-  elo: eloType[]
+  elo: eloType[],
+  turs: number,
   offTurs: number,
   offSum?: number
   offTursSum?: number,
@@ -26,7 +27,7 @@ export type deltaType = {
 export const Q = 700
 export const K = 40
 export const STARTELO = 1800
-export const MAX_KORREKTUR = STARTELO
+export const MAX_KORREKTUR = 1200
 
 export function Ewert_A(eloA: number, eloB: number) {
   const RES2 = 1 / (1 + Math.pow(10, ((eloB - eloA) / Q)))
@@ -44,26 +45,32 @@ export function k_factor(elo: number) {
   return 30
 }
 
-export function elo_korrektur(off: number, elo: number) {
+export function elo_korrektur(off: number, elo: number, teilnahmen: number, aktiv: boolean) {
   let offset = 0
   let korrekturElo = 0
 
-  if (off == 1 || off == 2) {
-    offset = 50
-  } else if (off == 3) {
-    offset == 100
-  } else if (off == 4) {
-    offset == 100
-  } else if (off == 5) {
-    offset == 200
-  } else if (off == 6) {
-    offset == 300
-  } else {
-    offset == 0
+  if (teilnahmen == 0 || aktiv == false) {
+    return { korrekturElo: elo, offset: 0 }
   }
 
+  if (off >= 6) {
+    offset = 300
+  } else if (off == 5) {
+    offset = 200
+  } else if (off == 4) {
+    offset = 150
+  } else if (off == 3) {
+    offset = 100
+  } else if (off == 2) {
+    offset = 50
+  } else if (off == 1) {
+    offset = 25
+  } else { offset = 0 }
+
+
   if (elo > 2000) {
-    offset = offset * 1.5
+
+    offset = Math.round(offset * 2)
   }
 
   if (elo < MAX_KORREKTUR) {
@@ -72,7 +79,8 @@ export function elo_korrektur(off: number, elo: number) {
     return { korrekturElo: MAX_KORREKTUR, offset: elo - MAX_KORREKTUR }
   }
 
-  korrekturElo = elo - offset > STARTELO ? elo - offset : STARTELO
+
+  korrekturElo = elo - offset > MAX_KORREKTUR ? elo - offset : MAX_KORREKTUR
 
   return { korrekturElo: korrekturElo, offset: offset }
 }
@@ -103,7 +111,8 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
         ranglisteDiff: 0
 
       }],
-      offTurs: 0
+      offTurs: 0,
+      turs: 0
     })
 
     deltaList.push({
@@ -195,6 +204,7 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
             ranglisteDiff: 0
           })
           eloList[indexHeim].offTurs = 0
+          eloList[indexHeim].turs += 1
 
         } else {
 
@@ -231,6 +241,8 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
             ranglisteDiff: 0
           })
           eloList[indexAway].offTurs = 0
+          eloList[indexAway].turs += 1
+
         } else {
           eloList[indexAway].elo[awayEloIndex].values.push(newElo)
           eloList[indexAway].elo[awayEloIndex].k_sum += k_factor(oldEloAway)
@@ -247,6 +259,8 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
 
     })
 
+    //elo korrektur
+
     eloList.forEach((p, idx) => {
 
       p.elo.sort((a, b) => a.turniernummer - b.turniernummer)
@@ -256,13 +270,14 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
 
       if (eloIndex == -1) {
 
-        p.offTurs += 1
+        p.turs > 0 ? p.offTurs += 1 : p.offTurs
+
         let alteElo = p.elo.findLast(f => f.turniernummer < t.tournament_number)!.values.at(-1)!
 
-        const korrigierteElo = elo_korrektur(p.offTurs, alteElo)
+        const korrigierteElo = elo_korrektur(p.offTurs, alteElo, p.turs, p.player.active)
 
 
-        console.log("Name: ", p.player.player_name, "#: ", t.tournament_number, "Korr. Elo: ", korrigierteElo, "Alte Elo: ", alteElo, "Off Turs: ", p.offTurs)
+        console.log("Name: ", p.player.player_name, "#: ", t.tournament_number, "Teil:", p.turs, "Korr. Elo: ", korrigierteElo, "Alte Elo: ", alteElo, "Off Turs: ", p.offTurs)
 
         p.elo.push({
           turniernummer: t.tournament_number,
@@ -275,7 +290,9 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
         })
 
         p.offSum = p.offSum ? p.offSum + korrigierteElo.offset : korrigierteElo.offset
-        p.offTursSum = p.offTursSum ? p.offTursSum + 1 : 1
+        if (p.turs > 0) (
+          p.offTursSum = p.offTursSum ? p.offTursSum + 1 : 1
+        )
 
 
         p.elo.sort((a, b) => a.turniernummer - b.turniernummer)

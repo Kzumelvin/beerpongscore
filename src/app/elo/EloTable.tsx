@@ -22,6 +22,7 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
       <Table>
         <TableHeader>
           <TableRow>
+            <TableHead>Rang</TableHead>
             <TableHead>Spielername</TableHead>
             <TableHead>Akt. NA</TableHead>
             <TableHead>Gesamt NA</TableHead>
@@ -32,8 +33,9 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
           </TableRow>
         </TableHeader>
         <TableBody>
-          {eloList.sort((a, b) => b.elo.at(-1)!.values.at(-1)! - a.elo.at(-1)!.values.at(-1)!).filter(f => f.player.active == active).map(p => (
+          {eloList.sort((a, b) => b.elo.at(-1)!.values.at(-1)! - a.elo.at(-1)!.values.at(-1)!).filter(f => f.player.active == active).map((p, idx) => (
             <TableRow key={p.player.player_name}>
+              <TableCell>{idx + 1}</TableCell>
               <TableCell>{p.player.player_name} {p.offTurs}</TableCell>
               <TableCell>{p.offTurs}</TableCell>
               <TableCell>{p.offTursSum ? p.offTursSum : 0}</TableCell>
