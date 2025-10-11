@@ -19,7 +19,7 @@ async function page() {
   })
 
 
-  let eloList = eloBerechnung(spieler, games, turniere)
+  const eloList = eloBerechnung(spieler, games, turniere)
 
   return (
     <div>

@@ -19,6 +19,19 @@ export type eloListType = {
   offTursSum?: number,
 }
 
+export type tPayload = {
+  turnier: {
+    elo: number[],
+    nummer: number
+  }
+}
+
+type pPayload = {
+  playerID: string,
+  t: tPayload[]
+}
+
+
 export type deltaType = {
   player_id: string,
   delta: number
@@ -276,9 +289,6 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
 
         const korrigierteElo = elo_korrektur(p.offTurs, alteElo, p.turs, p.player.active)
 
-
-        console.log("Name: ", p.player.player_name, "#: ", t.tournament_number, "Teil:", p.turs, "Korr. Elo: ", korrigierteElo, "Alte Elo: ", alteElo, "Off Turs: ", p.offTurs)
-
         p.elo.push({
           turniernummer: t.tournament_number,
           values: [korrigierteElo.korrekturElo],
@@ -319,4 +329,36 @@ export function eloBerechnung(spieler: playerType[], games: gameType[], allTurni
 
 
   return eloList
+}
+
+export function getEloTablePayload(eloList: eloListType[]) {
+
+  let payload: pPayload[] = []
+
+
+  eloList.forEach(p => {
+
+    const playerPayload: pPayload = { playerID: p.player.id!, t: [] }
+
+
+    p.elo.sort((a, b) => b.turniernummer - a.turniernummer).forEach(e => {
+
+      let turnierPayload: tPayload = {
+        turnier: {
+          elo: e.values,
+          nummer: e.turniernummer
+        }
+      }
+
+
+      playerPayload.t.push(turnierPayload)
+
+    })
+
+    payload.push(playerPayload)
+
+  })
+
+  return payload
+
 }

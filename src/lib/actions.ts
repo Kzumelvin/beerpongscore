@@ -1,6 +1,6 @@
 "use server"
 
-import { eloListType } from "./elo";
+import { eloListType, getEloTablePayload, tPayload } from "./elo";
 import { pb } from "./pocketbase";
 
 export async function updateElo(eloList: eloListType[]) {
@@ -26,6 +26,35 @@ export async function updateElo(eloList: eloListType[]) {
   try {
     return await batch.send()
 
+  } catch (e) {
+    console.log(e)
+    return e
+  }
+
+}
+
+export async function updateEloHist(eloList: eloListType[]) {
+
+  type payload = { player: string, elo: tPayload[] }
+
+  const data = getEloTablePayload(eloList)
+  const batch = pb.createBatch()
+
+  data.forEach(p => {
+
+    try {
+      let pLoad: payload = { player: p.playerID, elo: p.t }
+
+      batch.collection("elo").create(pLoad)
+    } catch (e) {
+      console.log(e)
+      return e
+    }
+
+  })
+
+  try {
+    return await batch.send()
   } catch (e) {
     console.log(e)
     return e
