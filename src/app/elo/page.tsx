@@ -14,7 +14,8 @@ async function page() {
   })
 
   const turniere: turnierType[] = await pb.collection("tournaments").getFullList({
-    expand: "groupA, groupB, groupC, groupD, groupE"
+    expand: "groupA, groupB, groupC, groupD, groupE",
+    filter: 'next != true'
   })
 
 
