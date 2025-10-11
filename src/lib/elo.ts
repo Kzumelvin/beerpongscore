@@ -1,6 +1,6 @@
 import { gameType, pb, playerType, turnierType } from "./pocketbase"
 
-type eloType = {
+export type eloType = {
   turniernummer: number,
   values: number[],
   k_sum: number,
@@ -20,15 +20,13 @@ export type eloListType = {
 }
 
 export type tPayload = {
-  turnier: {
-    elo: number[],
-    nummer: number
-  }
+  elo: number[],
+  nummer: number
 }
 
 type pPayload = {
   playerID: string,
-  t: tPayload[]
+  t: eloType[]
 }
 
 
@@ -343,15 +341,8 @@ export function getEloTablePayload(eloList: eloListType[]) {
 
     p.elo.sort((a, b) => b.turniernummer - a.turniernummer).forEach(e => {
 
-      let turnierPayload: tPayload = {
-        turnier: {
-          elo: e.values,
-          nummer: e.turniernummer
-        }
-      }
 
-
-      playerPayload.t.push(turnierPayload)
+      playerPayload.t.push(e)
 
     })
 
