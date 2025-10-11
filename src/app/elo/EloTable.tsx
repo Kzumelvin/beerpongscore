@@ -27,7 +27,7 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
             <TableHead>Gesamt NA</TableHead>
             <TableHead>Verlorene Elo</TableHead>
             {turniere.sort((a, b) => b.tournament_number - a.tournament_number).map(p => (
-              <TableHead key={p.tournament_number}>{p.tournament_name}</TableHead>
+              <TableHead key={p.tournament_number}>{p.tournament_name}<br /><span>Elo | Diff | Fehl.-Abzug | Rang | Delta Rang </span></TableHead>
             ))}
           </TableRow>
         </TableHeader>
@@ -38,8 +38,8 @@ function EloTable({ eloList, turniere }: { eloList: eloListType[], turniere: tur
               <TableCell>{p.offTurs}</TableCell>
               <TableCell>{p.offTursSum ? p.offTursSum : 0}</TableCell>
               <TableCell>{p.offSum ? p.offSum : 0}</TableCell>
-              {p.elo.sort((a, b) => b.turniernummer - a.turniernummer).map(e => (
-                <TableCell key={e.turniernummer}><span className='font-bold'>{e.values.at(-1)}</span> | ({e.offset} / -{e.offsetSum}) | {e.rangliste} | {e.ranglisteDiff > 0 ? `+${e.ranglisteDiff}` : e.ranglisteDiff}</TableCell>
+              {p.elo.sort((a, b) => b.turniernummer - a.turniernummer).map((e, idx) => (
+                <TableCell key={e.turniernummer}><span className='font-bold'>{e.values.at(-1)}</span> | {p.elo.find(f => f.turniernummer == e.turniernummer)?.values.at(-1)! - p.elo.find(f => f.turniernummer == e.turniernummer - 1)?.values.at(-1)!} | ({e.offset} / -{e.offsetSum}) | {e.rangliste} | {e.ranglisteDiff > 0 ? `+${e.ranglisteDiff}` : e.ranglisteDiff}</TableCell>
               ))}
             </TableRow>
           ))}
