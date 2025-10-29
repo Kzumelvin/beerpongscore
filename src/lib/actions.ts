@@ -45,7 +45,7 @@ export async function updateEloHist(eloList: eloListType[]) {
     try {
       let pLoad: payload = { player: p.playerID, elo: p.t }
 
-      batch.collection("elo").create(pLoad)
+      batch.collection("players").update(p.playerID, { elolist: p.t })
     } catch (e) {
       console.log(e)
       return e
