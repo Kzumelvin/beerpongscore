@@ -1,6 +1,6 @@
 import PocketBase from "pocketbase";
 
-export const pb = new PocketBase(process.env.NEXT_PUBLIC_PB_URL);
+export const pb = new PocketBase(process.env.NEXT_PUBLIC_PB_URL_LOCAL);
 pb.autoCancellation(false);
 
 export type gameType = {
