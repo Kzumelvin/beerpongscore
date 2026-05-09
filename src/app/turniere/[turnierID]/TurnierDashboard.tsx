@@ -17,15 +17,6 @@ import { Separator } from '@/components/ui/separator'
 
 function TurnierDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turnierType }) {
 
-  if (!turnier.expand.A) {
-
-    return (
-      <div>
-        <h2>Keine Mannschaften eingetragen!</h2>
-      </div>
-    )
-  }
-
   let openGames = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC, turnier.expand.groupD, turnier.expand.groupE)
 
   const [games, setGames] = useState<gameType[]>(spiele)
