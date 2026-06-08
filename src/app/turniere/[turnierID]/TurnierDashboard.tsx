@@ -17,7 +17,6 @@ import { Separator } from '@/components/ui/separator'
 
 function TurnierDashboard({ spiele, turnier }: { spiele: gameType[], turnier: turnierType }) {
 
-
   let openGames = matchmakingGroup(turnier.id!, turnier.expand.groupA, turnier.expand.groupB, turnier.expand.groupC, turnier.expand.groupD, turnier.expand.groupE)
 
   const [games, setGames] = useState<gameType[]>(spiele)
