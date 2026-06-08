@@ -10,7 +10,7 @@ type Admin = {
   }
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
 
   try {
     return await auth0.middleware(request)
